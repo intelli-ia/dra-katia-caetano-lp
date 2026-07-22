@@ -143,7 +143,7 @@ export default function HeroSection() {
         {/* Foto — proporção fixa; a altura desta caixa É a altura total da hero no mobile */}
         <div className="relative w-full aspect-[912/1850]">
           <Image
-            src="/132.png"
+            src="/132.webp"
             alt="Dra. Katia Caetano"
             fill
             priority
