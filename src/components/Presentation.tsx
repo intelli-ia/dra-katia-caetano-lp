@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { GraduationCap } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { WA_LINK } from "@/lib/constants";
 
 export default function PresentationSection() {
@@ -23,10 +23,12 @@ export default function PresentationSection() {
             <div className="absolute -inset-6 bg-[#008538]/10 rounded-[2.5rem] blur-2xl -z-10" />
 
             <div className="relative h-80 md:h-[500px] rounded-[2rem] overflow-hidden border border-[#13181E]/10 shadow-[0_30px_60px_-20px_rgba(19,24,30,0.25)]">
-              <ImagePlaceholder
-                variant="light"
-                className="w-full h-full rounded-[2rem]"
-                label="Foto — Dra. Katia Caetano"
+              <Image
+                src="/presentation-1.webp"
+                alt="Dra. Katia Caetano"
+                fill
+                unoptimized
+                className="object-cover object-top"
               />
             </div>
 
