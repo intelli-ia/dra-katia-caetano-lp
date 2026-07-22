@@ -22,13 +22,13 @@ export default function PresentationSection() {
             {/* Glow decorativo */}
             <div className="absolute -inset-6 bg-[#008538]/10 rounded-[2.5rem] blur-2xl -z-10" />
 
-            <div className="relative h-80 md:h-[500px] rounded-[2rem] overflow-hidden border border-[#13181E]/10 shadow-[0_30px_60px_-20px_rgba(19,24,30,0.25)]">
+            <div className="relative h-[420px] md:h-[640px] rounded-[2rem] overflow-hidden border border-[#13181E]/10 shadow-[0_30px_60px_-20px_rgba(19,24,30,0.25)]">
               <Image
                 src="/presentation-1.webp"
                 alt="Dra. Katia Caetano"
                 fill
                 unoptimized
-                className="object-cover object-top"
+                className="object-cover object-[center_28%]"
               />
             </div>
 
