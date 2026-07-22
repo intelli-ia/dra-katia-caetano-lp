@@ -37,14 +37,14 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden md:aspect-[2263/882] md:flex md:items-center"
+      className="relative w-full overflow-hidden md:min-h-[90vh] md:flex md:items-center"
     >
       {/* ===== Desktop ===== */}
 
       {/* Foto — ocupa toda a hero */}
       <div className="hidden md:block absolute inset-0 z-0">
         <Image
-          src="/123.webp"
+          src="/142.webp"
           alt="Dra. Katia Caetano"
           fill
           priority
@@ -55,7 +55,7 @@ export default function HeroSection() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(115deg, rgba(19,24,30,0.1) 0%, rgba(19,24,30,0.55) 55%, rgba(19,24,30,0.88) 100%)",
+              "linear-gradient(90deg, rgba(19,24,30,0.05) 0%, rgba(19,24,30,0.1) 40%, rgba(19,24,30,0.55) 62%, rgba(19,24,30,0.9) 100%)",
           }}
         />
       </div>
@@ -86,14 +86,14 @@ export default function HeroSection() {
 
       {/* Conteúdo desktop */}
       <div className="hidden md:block relative z-10 w-full container mx-auto px-6">
-        <div className="lg:ml-auto lg:w-[52%] xl:w-[46%] max-w-xl">
+        <div className="lg:ml-auto lg:w-[54%] xl:w-[48%] max-w-2xl">
 
           {/* Eyebrow */}
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[#008538] font-heading font-medium text-sm md:text-base uppercase tracking-widest mb-3 lg:mb-4"
+            className="text-[#008538] font-heading font-semibold text-base md:text-lg uppercase tracking-widest mb-4 lg:mb-5"
           >
             Supervisão clínica gratuita.
           </motion.p>
@@ -103,7 +103,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-heading font-medium text-white text-2xl md:text-3xl lg:text-4xl leading-[1.15] tracking-tight max-w-md"
+            className="font-heading font-medium text-white text-3xl md:text-4xl lg:text-5xl leading-[1.12] tracking-tight max-w-lg"
           >
             Domine seu raciocínio clínico e atenda com a{" "}
             <span className="text-[#008538]">segurança de especialista.</span>
@@ -114,7 +114,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/65 text-sm md:text-base leading-relaxed mt-3 lg:mt-4 max-w-md"
+            className="text-white/70 text-base md:text-lg leading-relaxed mt-4 lg:mt-5 max-w-lg"
           >
             Receba o direcionamento prático de uma PhD com mais de 20 anos de
             experiência e concorra a ter o seu próprio atendimento supervisionado ao vivo.
@@ -125,14 +125,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="mt-6 lg:mt-7"
+            className="mt-8 lg:mt-9"
           >
             <CTAButton
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
               label="Quero participar"
-              className="px-7 py-3 text-base"
+              className="px-9 py-4 text-lg"
             />
           </motion.div>
         </div>
@@ -165,7 +165,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[#008538] font-heading font-medium text-[11px] uppercase tracking-widest mb-2"
+            className="text-[#008538] font-heading font-semibold text-xs uppercase tracking-widest mb-2"
           >
             Supervisão clínica gratuita.
           </motion.p>
@@ -174,7 +174,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-heading font-medium text-white text-xl leading-[1.2] tracking-tight max-w-[280px] mx-auto"
+            className="font-heading font-bold text-white text-[26px] leading-[1.2] tracking-tight max-w-[300px] mx-auto"
           >
             Domine seu raciocínio clínico e atenda com a{" "}
             <span className="text-[#008538]">segurança de especialista.</span>
@@ -184,7 +184,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/65 text-xs leading-relaxed mt-2 max-w-[280px] mx-auto"
+            className="text-white/60 text-sm leading-relaxed mt-2.5 max-w-[300px] mx-auto"
           >
             Receba o direcionamento prático de uma PhD com mais de 20 anos de
             experiência e concorra a ter o seu próprio atendimento supervisionado ao vivo.
@@ -194,14 +194,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="mt-4 flex justify-center"
+            className="mt-5 flex justify-center"
           >
             <CTAButton
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
               label="Quero participar"
-              className="px-5 py-2 text-sm"
+              className="px-6 py-3 text-base"
             />
           </motion.div>
           </div>

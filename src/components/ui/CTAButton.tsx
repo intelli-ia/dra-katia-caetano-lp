@@ -25,7 +25,7 @@ export function CTAButton({
     <Button asChild variant="gold" size={size} className={className}>
       <Link href={href} target={target} rel={rel}>
         {label}
-        <ArrowRight className={size === "sm" ? "h-3.5 w-3.5" : "h-4 w-4"} />
+        <ArrowRight className={size === "sm" ? "h-3.5 w-3.5" : "h-5 w-5"} />
       </Link>
     </Button>
   );

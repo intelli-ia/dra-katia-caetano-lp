@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { CTAButton } from "@/components/ui/CTAButton";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { WA_LINK } from "@/lib/constants";
 
 export default function JourneySection() {
@@ -19,14 +19,32 @@ export default function JourneySection() {
             transition={{ duration: 0.8 }}
             className="flex items-center justify-center gap-3 md:gap-4"
           >
-            <div className="w-[28%] h-64 md:h-80">
-              <ImagePlaceholder className="w-full h-full rounded-2xl" label="Imagem" />
+            <div className="relative w-[28%] h-64 md:h-80 rounded-2xl overflow-hidden">
+              <Image
+                src="/journey-1.webp"
+                alt="Dra. Katia Caetano anotando em seu consultório"
+                fill
+                unoptimized
+                className="object-cover scale-125 object-[center_25%]"
+              />
             </div>
-            <div className="w-[36%] h-72 md:h-96">
-              <ImagePlaceholder className="w-full h-full rounded-2xl" label="Imagem" />
+            <div className="relative w-[36%] h-72 md:h-96 rounded-2xl overflow-hidden">
+              <Image
+                src="/journey-2.webp"
+                alt="Dra. Katia Caetano observando a janela do consultório"
+                fill
+                unoptimized
+                className="object-cover scale-125 object-[65%_30%]"
+              />
             </div>
-            <div className="w-[28%] h-64 md:h-80">
-              <ImagePlaceholder className="w-full h-full rounded-2xl" label="Imagem" />
+            <div className="relative w-[28%] h-64 md:h-80 rounded-2xl overflow-hidden">
+              <Image
+                src="/journey-3.webp"
+                alt="Dra. Katia Caetano lendo em seu consultório"
+                fill
+                unoptimized
+                className="object-cover scale-125 object-[center_20%]"
+              />
             </div>
           </motion.div>
 
