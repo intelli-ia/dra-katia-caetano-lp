@@ -12,7 +12,7 @@ const stats = [
     title: "Supervisão ao vivo",
     description: "Acompanhar supervisões reais e aprender com casos clínicos ao vivo.",
     rotate: "-rotate-3",
-    top: "0px",
+    top: "180px",
     left: "0px",
   },
   {
@@ -20,16 +20,16 @@ const stats = [
     title: "Raciocínio clínico",
     description: "Desenvolver seu raciocínio clínico e fortalecer uma prática baseada em evidências.",
     rotate: "rotate-2",
-    top: "160px",
-    left: "460px",
+    top: "180px",
+    left: "210px",
   },
   {
     icon: FileText,
     title: "Materiais exclusivos",
     description: "Acessar materiais e documentos exclusivos compartilhados.",
     rotate: "-rotate-2",
-    top: "340px",
-    left: "0px",
+    top: "180px",
+    left: "420px",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function HeroSection() {
       </div>
 
       {/* Stats — imagem secundária no lado esquerdo */}
-      <div className="hidden lg:block absolute left-24 xl:left-32 bottom-4 xl:bottom-8 z-10 w-[660px] h-[520px]">
+      <div className="hidden lg:block absolute left-8 xl:left-12 bottom-0 z-10 w-[660px] h-[320px]">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.title}
@@ -69,16 +69,13 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 + i * 0.15 }}
             style={{ top: stat.top, left: stat.left }}
-            className={`absolute ${stat.rotate} w-44 xl:w-48 bg-[#161C24]/95 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow-2xl shadow-black/40`}
+            className={`absolute w-44 xl:w-48 bg-[#161C24]/95 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow-2xl shadow-black/40`}
           >
             <div className="w-9 h-9 rounded-lg bg-[#008538]/15 flex items-center justify-center mb-2.5">
               <stat.icon className="w-5 h-5 text-[#008538]" />
             </div>
-            <p className="font-heading font-semibold text-white text-sm leading-snug">
+            <p className="font-heading font-semibold text-white text-base leading-snug">
               {stat.title}
-            </p>
-            <p className="text-white/50 text-xs leading-snug mt-1">
-              {stat.description}
             </p>
           </motion.div>
         ))}
@@ -93,7 +90,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[#008538] font-heading font-semibold text-base md:text-lg uppercase tracking-widest mb-4 lg:mb-5"
+            className="text-[#008538] font-heading font-semibold text-lg md:text-xl uppercase tracking-widest mb-4 lg:mb-5"
           >
             Supervisão clínica gratuita.
           </motion.p>
@@ -103,7 +100,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-heading font-medium text-white text-3xl md:text-4xl lg:text-5xl leading-[1.12] tracking-tight max-w-lg"
+            className="font-heading font-medium text-white text-4xl md:text-5xl lg:text-6xl leading-[1.12] tracking-tight max-w-lg"
           >
             Domine seu raciocínio clínico e atenda com a{" "}
             <span className="text-[#008538]">segurança de especialista.</span>
@@ -114,7 +111,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/70 text-base md:text-lg leading-relaxed mt-4 lg:mt-5 max-w-lg"
+            className="text-white/70 text-lg md:text-2xl leading-relaxed mt-4 lg:mt-5 max-w-lg"
           >
             Receba o direcionamento prático de uma PhD com mais de 20 anos de
             experiência e concorra a ter o seu próprio atendimento supervisionado ao vivo.
@@ -132,7 +129,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               label="Quero participar"
-              className="px-9 py-4 text-lg"
+              className="md:px-10 md:py-4 md:text-2xl"
             />
           </motion.div>
         </div>
@@ -165,7 +162,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-[#008538] font-heading font-semibold text-xs uppercase tracking-widest mb-2"
+            className="text-[#008538] font-heading font-semibold text-sm uppercase tracking-widest mb-2"
           >
             Supervisão clínica gratuita.
           </motion.p>
@@ -174,7 +171,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-heading font-bold text-white text-[26px] leading-[1.2] tracking-tight max-w-[300px] mx-auto"
+            className="font-heading font-bold text-white text-[30px] leading-[1.2] tracking-tight max-w-[300px] mx-auto"
           >
             Domine seu raciocínio clínico e atenda com a{" "}
             <span className="text-[#008538]">segurança de especialista.</span>
@@ -184,7 +181,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/60 text-sm leading-relaxed mt-2.5 max-w-[300px] mx-auto"
+            className="text-white/60 text-base leading-relaxed mt-2.5 max-w-[300px] mx-auto"
           >
             Receba o direcionamento prático de uma PhD com mais de 20 anos de
             experiência e concorra a ter o seu próprio atendimento supervisionado ao vivo.
@@ -201,7 +198,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               label="Quero participar"
-              className="px-6 py-3 text-base"
+              className="px-6 py-3 text-xl"
             />
           </motion.div>
           </div>
