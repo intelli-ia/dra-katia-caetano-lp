@@ -2,23 +2,22 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Activity, Brain, FileText } from "lucide-react";
+import { Users, FileText } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
 import { WA_LINK } from "@/lib/constants";
 
 const stats = [
   {
-    icon: Activity,
-    title: "Supervisão ao vivo",
-    description: "Acompanhar supervisões reais e aprender com casos clínicos ao vivo.",
+    imageSrc: "/meet-logo.png",
+    title: "Ao Vivo no Google Meet",
     rotate: "-rotate-3",
     top: "180px",
     left: "0px",
   },
   {
-    icon: Brain,
-    title: "Raciocínio clínico",
-    description: "Desenvolver seu raciocínio clínico e fortalecer uma prática baseada em evidências.",
+    icon: Users,
+    title: "+100 alunos online",
     rotate: "rotate-2",
     top: "180px",
     left: "210px",
@@ -26,7 +25,6 @@ const stats = [
   {
     icon: FileText,
     title: "Materiais exclusivos",
-    description: "Acessar materiais e documentos exclusivos compartilhados.",
     rotate: "-rotate-2",
     top: "180px",
     left: "420px",
@@ -50,6 +48,7 @@ export default function HeroSection() {
           priority
           unoptimized
           className="object-cover"
+          style={{ objectPosition: "50% -15%" }}
         />
         <div
           className="absolute inset-0"
@@ -69,14 +68,20 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 + i * 0.15 }}
             style={{ top: stat.top, left: stat.left }}
-            className={`absolute w-44 xl:w-48 bg-[#161C24]/95 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow-2xl shadow-black/40`}
+            className={`absolute w-44 xl:w-48 bg-[#161C24]/95 backdrop-blur-sm border border-white/10 rounded-2xl p-3.5 shadow-2xl shadow-black/40`}
           >
-            <div className="w-9 h-9 rounded-lg bg-[#008538]/15 flex items-center justify-center mb-2.5">
-              <stat.icon className="w-5 h-5 text-[#008538]" />
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 shrink-0 rounded-xl bg-[#008538]/15 flex items-center justify-center">
+                {"imageSrc" in stat ? (
+                  <Image src={stat.imageSrc} alt={stat.title} width={28} height={28} />
+                ) : (
+                  <stat.icon className="w-6 h-6 text-[#008538]" />
+                )}
+              </div>
+              <p className="font-heading font-semibold text-white text-base leading-snug">
+                {stat.title}
+              </p>
             </div>
-            <p className="font-heading font-semibold text-white text-base leading-snug">
-              {stat.title}
-            </p>
           </motion.div>
         ))}
       </div>
@@ -85,16 +90,6 @@ export default function HeroSection() {
       <div className="hidden md:block relative z-10 w-full container mx-auto px-6">
         <div className="lg:ml-auto lg:w-[54%] xl:w-[48%] max-w-2xl">
 
-          {/* Eyebrow */}
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-[#008538] font-heading font-semibold text-lg md:text-xl uppercase tracking-widest mb-4 lg:mb-5"
-          >
-            Supervisão clínica gratuita.
-          </motion.p>
-
           {/* H1 */}
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
@@ -102,8 +97,8 @@ export default function HeroSection() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="font-heading font-medium text-white text-4xl md:text-5xl lg:text-6xl leading-[1.12] tracking-tight max-w-lg"
           >
-            Domine seu raciocínio clínico e atenda com a{" "}
-            <span className="text-[#008538]">segurança de especialista.</span>
+            Supervisão clínica ao vivo e gratuita para{" "}
+            <span className="text-[#008538]">psicólogos.</span>
           </motion.h1>
 
           {/* Subtítulo */}
@@ -113,8 +108,8 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-white/70 text-lg md:text-2xl leading-relaxed mt-4 lg:mt-5 max-w-lg"
           >
-            Receba o direcionamento prático de uma PhD com mais de 20 anos de
-            experiência e concorra a ter o seu próprio atendimento supervisionado ao vivo.
+            Receba o direcionamento de uma PhD em psicologia com <strong>mais de 20 anos de
+            experiência de consultório.</strong> No Google Meet, ao vivo e 100% gratuito.
           </motion.p>
 
           {/* CTA */}
@@ -124,13 +119,15 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mt-8 lg:mt-9"
           >
-            <CTAButton
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              label="Quero participar"
-              className="md:px-10 md:py-4 md:text-2xl"
-            />
+            <MovingBorderWrapper>
+              <CTAButton
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                label="Quero participar"
+                className="text-white"
+              />
+            </MovingBorderWrapper>
           </motion.div>
         </div>
       </div>
@@ -157,34 +154,25 @@ export default function HeroSection() {
 
           {/* Conteúdo — posicionado de forma absoluta sobre a foto.
               Mover isso (via `bottom`) NÃO altera a altura da hero nem a posição da próxima seção. */}
-          <div className="absolute inset-x-0 bottom-44 z-10 px-5 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-[#008538] font-heading font-semibold text-sm uppercase tracking-widest mb-2"
-          >
-            Supervisão clínica gratuita.
-          </motion.p>
-
+          <div className="absolute inset-x-0 bottom-24 z-10 px-5 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-heading font-bold text-white text-[30px] leading-[1.2] tracking-tight max-w-[300px] mx-auto"
+            className="font-heading font-bold text-white text-[36px] leading-[1.2] tracking-tight max-w-[300px] mx-auto"
           >
-            Domine seu raciocínio clínico e atenda com a{" "}
-            <span className="text-[#008538]">segurança de especialista.</span>
+            Supervisão clínica ao vivo e gratuita para{" "}
+            <span className="text-white">psicólogos.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/60 text-base leading-relaxed mt-2.5 max-w-[300px] mx-auto"
+            className="text-white text-base leading-relaxed mt-2.5 max-w-[300px] mx-auto"
           >
-            Receba o direcionamento prático de uma PhD com mais de 20 anos de
-            experiência e concorra a ter o seu próprio atendimento supervisionado ao vivo.
+            Receba o direcionamento de uma PhD em psicologia com <strong>mais de 20 anos de
+            experiência de consultório.</strong> No Google Meet, ao vivo e 100% gratuito.
           </motion.p>
 
           <motion.div
@@ -193,13 +181,15 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mt-5 flex justify-center"
           >
-            <CTAButton
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              label="Quero participar"
-              className="px-6 py-3 text-xl"
-            />
+            <MovingBorderWrapper>
+              <CTAButton
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                label="Quero participar"
+                className="text-white"
+              />
+            </MovingBorderWrapper>
           </motion.div>
           </div>
         </div>
