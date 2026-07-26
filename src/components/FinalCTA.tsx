@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
 import { WA_LINK, PROFESSIONAL_NAME } from "@/lib/constants";
 
 export function FinalCTASection() {
@@ -25,12 +26,12 @@ export function FinalCTASection() {
             <span className="text-[#008538]/80 font-heading font-medium text-sm uppercase tracking-widest mb-2 md:mb-6 block">
               {PROFESSIONAL_NAME}
             </span>
-            <h2 className="font-heading font-medium text-2xl md:text-3xl lg:text-4xl text-[#13181E] leading-tight mb-3 md:mb-6">
+            <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-[#13181E] leading-[1.1] tracking-tight mb-3 md:mb-6">
               Sua vaga na próxima supervisão
               <br />
               <span className="text-[#008538]">está a um clique de distância.</span>
             </h2>
-            <p className="text-[#13181E]/55 text-base md:text-lg leading-relaxed max-w-md mx-auto">
+            <p className="text-[#13181E]/55 text-xl md:text-2xl leading-relaxed max-w-xl mx-auto">
               A cada 15 dias, você acompanha casos reais e sai com mais clareza
               pra atender com a segurança de quem sabe exatamente o que está
               fazendo. É gratuito, é ao vivo, e começa agora dentro do nosso
@@ -45,12 +46,15 @@ export function FinalCTASection() {
             viewport={{ once: true }}
             className="relative z-10 flex justify-center mb-6"
           >
-            <CTAButton
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              label="Quero participar"
-            />
+            <MovingBorderWrapper>
+              <CTAButton
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                label="Quero participar"
+                className="text-white"
+              />
+            </MovingBorderWrapper>
           </motion.div>
 
         </div>

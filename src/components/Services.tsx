@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
 import { WA_LINK } from "@/lib/constants";
 
 const steps = [
@@ -68,14 +69,14 @@ export default function ForWhomSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-24"
         >
-          <h2 className="font-heading font-medium text-2xl md:text-3xl lg:text-4xl text-[#13181E] leading-tight max-w-2xl mx-auto">
+          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-[#13181E] leading-[1.1] tracking-tight max-w-2xl mx-auto">
             Como garantir o seu acesso ao{" "}
             <span className="text-[#008538]">próximo encontro</span>
           </h2>
         </motion.div>
 
         {/* Steps */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
 
           {/* Linha de fundo (estática) */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#13181E]/15 -translate-x-1/2 hidden md:block" />
@@ -92,7 +93,7 @@ export default function ForWhomSection() {
               return (
                 <div
                   key={step.number}
-                  className={`relative flex items-center md:mb-16 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  className={`relative flex items-center md:mb-20 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
                 >
                   {/* Conteúdo */}
                   <motion.div
@@ -100,28 +101,28 @@ export default function ForWhomSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut", delay: i * 0.1 }}
-                    className={`w-full md:w-[calc(50%-2.5rem)] ${isLeft ? "md:text-right md:pr-10" : "md:text-left md:pl-10"}`}
+                    className={`w-full md:w-[calc(50%-3rem)] ${isLeft ? "md:text-right md:pr-12" : "md:text-left md:pl-12"}`}
                   >
-                    <p className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-2">
+                    <p className="text-[#008538] font-heading font-medium text-xs md:text-sm uppercase tracking-widest mb-3">
                       Passo {step.number}
                     </p>
-                    <h3 className="font-heading font-medium text-lg md:text-xl text-[#13181E] leading-snug mb-2">
+                    <h3 className="font-heading font-medium text-lg md:text-2xl text-[#13181E] leading-snug mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-[#13181E]/55 text-sm md:text-base leading-relaxed">
+                    <p className="text-[#13181E]/55 text-sm md:text-lg leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>
 
                   {/* Círculo fixo na linha central */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#008538] items-center justify-center shrink-0 z-10 shadow-[0_0_20px_rgba(0,133,56,0.4)]">
-                    <span className="font-heading font-medium text-white text-xs">
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-[#008538] items-center justify-center shrink-0 z-10 shadow-[0_0_20px_rgba(0,133,56,0.4)]">
+                    <span className="font-heading font-semibold text-white text-sm">
                       {step.number}
                     </span>
                   </div>
 
                   {/* Espaço oposto */}
-                  <div className="hidden md:block w-[calc(50%-2.5rem)]" />
+                  <div className="hidden md:block w-[calc(50%-3rem)]" />
                 </div>
               );
             })}
@@ -137,12 +138,15 @@ export default function ForWhomSection() {
           transition={{ duration: 0.6 }}
           className="flex justify-center mt-16 md:mt-20"
         >
-          <CTAButton
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            label="Quero participar"
-          />
+          <MovingBorderWrapper>
+            <CTAButton
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              label="Quero participar"
+              className="text-white"
+            />
+          </MovingBorderWrapper>
         </motion.div>
 
       </div>

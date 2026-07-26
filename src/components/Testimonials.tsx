@@ -3,64 +3,69 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
 import { WA_LINK } from "@/lib/constants";
 
 export default function TestimonialsSection() {
   return (
     <section id="depoimentos" className="relative w-full py-20 md:py-36 section-bg-light overflow-hidden">
 
-      <div className="container mx-auto px-6 md:px-16">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <div className="w-full px-4 md:px-8">
+        <div className="bg-[#13181E] rounded-3xl overflow-hidden">
+          <div className="flex flex-col md:flex-row items-stretch gap-0">
 
-          {/* Image — left */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full md:w-2/5 flex-shrink-0"
-          >
-            <Image
-              src="/psikatiacaetano_DXy6ogYFkaA_5.jpg"
-              alt="Dra. Kátia Caetano"
-              width={560}
-              height={700}
-              className="w-full h-auto rounded-2xl object-cover"
-            />
-          </motion.div>
+            {/* Image — left */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="w-full md:w-2/5 flex-shrink-0 p-5 md:p-8"
+            >
+              <Image
+                src="/psikatiacaetano_DXy6ogYFkaA_5.jpg"
+                alt="Dra. Kátia Caetano"
+                width={560}
+                height={700}
+                className="w-full h-full object-cover rounded-2xl"
+                style={{ minHeight: "400px" }}
+              />
+            </motion.div>
 
-          {/* Content — right */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex-1"
-          >
-            <h2 className="font-heading font-semibold text-[#13181E] text-3xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-5">
-              Um ambiente para quem leva a{" "}
-              <span className="text-[#008538]">psicologia a sério.</span>
-            </h2>
-            <p className="font-heading font-medium text-[#13181E]/70 text-lg md:text-2xl leading-snug mb-7">
-              O suporte prático que irá melhorar a qualidade dos seus atendimentos.
-            </p>
-            <div className="w-12 h-0.5 bg-[#008538] mb-7" />
-            <p className="text-[#13181E] text-lg md:text-xl leading-relaxed mb-10">
-              A cada 15 dias, a Dra. Kátia Caetano (Doutora pela USP e Pós-Doc no
-              East Bay Behavior Therapy Center - EUA) conduz sessões de supervisão
-              ao vivo focadas em casos reais, para você aprender com quem é
-              referência na prática clínica, e conduzir seus casos como um
-              especialista.
-            </p>
-            <CTAButton
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              label="Quero participar"
-              className="md:px-10 md:py-4 md:text-2xl"
-            />
-          </motion.div>
+            {/* Content — right */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex-1 px-8 py-10 md:px-12 md:py-14 flex flex-col justify-center"
+            >
+              <h2 className="font-heading font-semibold text-white text-3xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-5">
+                Por que minhas supervisões reúnem{" "}
+                mais de 100 psicólogas ao&nbsp;vivo?
+              </h2>
+              <p className="font-heading font-medium text-white/60 text-lg md:text-2xl leading-snug mb-7">
+                Porque raciocínio clínico não se aprende lendo. Se aprende vendo casos reais sendo resolvidos.
+              </p>
+              <div className="w-12 h-0.5 bg-[#008538] mb-7" />
+              <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-10">
+                A cada 15 dias, apresento e discuto ao vivo casos clínicos reais com mais de 100 psicólogos no Google Meet.
+                Cada sessão é uma oportunidade de entender como estruturar hipóteses, tomar decisões e conduzir
+                atendimentos com mais segurança — trocando experiência com colegas e aprendendo, na prática,
+                o raciocínio que transforma um psicólogo em especialista.
+              </p>
+              <MovingBorderWrapper>
+                <CTAButton
+                  href={WA_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  label="Quero participar"
+                  className="text-white"
+                />
+              </MovingBorderWrapper>
+            </motion.div>
 
+          </div>
         </div>
       </div>
 

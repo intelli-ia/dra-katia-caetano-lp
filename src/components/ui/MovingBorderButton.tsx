@@ -53,8 +53,8 @@ export function MovingBorderWrapper({
   duration?: number;
 }) {
   return (
-    <div className="relative inline-flex overflow-hidden rounded-full p-[2px]">
-      <div className="absolute inset-0">
+    <div className="relative inline-flex w-fit overflow-hidden rounded-full p-[2px]">
+      <div className="absolute inset-0 overflow-hidden rounded-full">
         <MovingBorder duration={duration} />
       </div>
       <div className="relative">{children}</div>

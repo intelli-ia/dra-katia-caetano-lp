@@ -1,36 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Video, BookOpen, Compass, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 const items = [
   {
-    icon: Video,
-    title: "Supervisões Clínicas ao Vivo",
-    description: "Encontros quinzenais que funcionam como um laboratório prático.",
+    title: "Supervisões Clínicas ao\u00a0Vivo",
+    image: "/card-supervisao.jpg",
+    description: "Encontros quinzenais ao vivo com análise e discussão de casos clínicos reais.",
   },
   {
-    icon: BookOpen,
-    title: "Acervo de Curadoria Científica",
-    description: "Materiais complementares de leitura.",
+    title: "Acervo de Curadoria\u00a0Científica",
+    image: "/card-curadoria.jpg",
+    description: "Artigos, protocolos e materiais selecionados para aprofundar sua prática clínica.",
   },
   {
-    icon: Compass,
     title: "Direcionamento Estratégico",
-    description:
-      "Recomendações práticas e orientações de manejo para os desafios que você encontra no consultório, garantindo que você nunca se sinta desamparado na condução dos seus casos.",
+    image: "/card-direcionamento.jpg",
+    description: "Orientações práticas de manejo clínico para os desafios do seu consultório.",
   },
   {
-    icon: MessageCircle,
-    title: "Comunidade de Intervisão",
-    description: "Acesso ao nosso grupo exclusivo no WhatsApp.",
+    title: "Comunidade de\u00a0Intervisão",
+    image: "/card-whatsapp.png",
+    imageBg: "bg-[#25D366]",
+    imageContain: true,
+    description: "Grupo exclusivo no WhatsApp para trocar experiências entre as supervisões.",
   },
 ];
 
 export default function AboutSection() {
   return (
     <section id="sobre" className="relative w-full py-20 md:py-32 section-bg">
-      <div className="container mx-auto px-6 md:px-16">
+      <div className="w-full px-4 md:px-8">
 
         {/* Cabeçalho da seção */}
         <motion.div
@@ -40,7 +41,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           className="max-w-2xl mx-auto text-center mb-14 md:mb-20"
         >
-          <h2 className="font-heading font-medium text-2xl md:text-3xl lg:text-4xl text-white leading-tight">
+          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight">
             O que você acessa junto do seu{" "}
             <span className="text-[#008538]">acompanhamento:</span>
           </h2>
@@ -55,15 +56,20 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-white/[0.03] border border-white/10 rounded-2xl p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:bg-white/[0.05] hover:border-[#008538]/50 hover:shadow-[0_24px_48px_-16px_rgba(0,133,56,0.4)]"
+              className="group bg-white/[0.03] border border-white/10 rounded-2xl p-5 min-h-[380px] flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:bg-white/[0.05] hover:border-[#008538]/50 hover:shadow-[0_24px_48px_-16px_rgba(0,133,56,0.4)]"
             >
-              <div className="w-12 h-12 rounded-xl border border-[#008538]/40 flex items-center justify-center mb-5 transition-all duration-300 ease-out group-hover:bg-[#008538] group-hover:border-[#008538] group-hover:shadow-[0_0_24px_rgba(0,133,56,0.55)] group-hover:scale-110">
-                <item.icon className="w-5 h-5 text-[#008538] transition-colors duration-300 group-hover:text-white" />
-              </div>
-              <h3 className="font-heading font-semibold text-white text-base md:text-lg leading-snug mb-2 transition-colors duration-300 group-hover:text-[#00e070]">
+              <h3 className="font-heading font-semibold text-white text-2xl md:text-3xl leading-snug mb-4 transition-colors duration-300 group-hover:text-[#00e070]">
                 {item.title}
               </h3>
-              <p className="text-white/50 text-sm leading-relaxed">
+              <div className={`relative w-full aspect-[4/3] mb-4 rounded-xl overflow-hidden ${"imageBg" in item ? item.imageBg : ""}`}>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className={"imageContain" in item ? "object-contain p-10" : "object-cover"}
+                />
+              </div>
+              <p className="text-white text-lg md:text-xl leading-relaxed">
                 {item.description}
               </p>
             </motion.div>

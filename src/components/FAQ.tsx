@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
 import { WA_LINK } from "@/lib/constants";
 
 const faqs = [
@@ -38,7 +39,7 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-10 md:mb-16"
         >
-          <h2 className="font-heading font-medium text-2xl md:text-3xl lg:text-4xl text-white leading-tight">
+          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight">
             Ficou com alguma{" "}
             <span className="text-[#008538]">dúvida?</span>
           </h2>
@@ -58,7 +59,7 @@ export default function FAQSection() {
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between gap-3 px-5 md:px-7 py-5 md:py-6 text-left group hover:bg-white/5 transition-colors duration-200"
               >
-                <span className="font-heading font-medium text-[15px] md:text-[17px] text-white group-hover:text-[#008538] transition-colors duration-200 leading-snug">
+                <span className="font-heading font-medium text-lg md:text-xl text-white group-hover:text-[#008538] transition-colors duration-200 leading-snug">
                   {faq.q}
                 </span>
                 <span
@@ -97,7 +98,7 @@ export default function FAQSection() {
                   >
                     <div className="px-5 md:px-7 pb-5 md:pb-7">
                       <div className="w-full h-px bg-white/10 mb-4" />
-                      <p className="text-white/60 leading-relaxed text-[14px] md:text-[16px]">
+                      <p className="text-white/60 leading-relaxed text-base md:text-lg">
                         {faq.a}
                       </p>
                     </div>
@@ -115,12 +116,15 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <CTAButton
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            label="Quero participar"
-          />
+          <MovingBorderWrapper>
+            <CTAButton
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              label="Quero participar"
+              className="text-white"
+            />
+          </MovingBorderWrapper>
         </motion.div>
 
       </div>

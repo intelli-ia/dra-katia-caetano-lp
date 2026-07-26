@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { GraduationCap } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
 import { WA_LINK } from "@/lib/constants";
 
 export default function PresentationSection() {
@@ -59,7 +60,7 @@ export default function PresentationSection() {
             <span className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-3 block">
               Sobre a mentora
             </span>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-[#13181E] leading-tight mb-6">
+            <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-[#13181E] leading-[1.1] tracking-tight mb-6">
               Dra Katia Caetano
             </h2>
             <p className="text-[#13181E]/60 text-base md:text-lg leading-relaxed max-w-lg">
@@ -77,12 +78,15 @@ export default function PresentationSection() {
               sessão.
             </p>
             <div className="pt-8">
-              <CTAButton
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                label="Quero participar"
-              />
+              <MovingBorderWrapper>
+                <CTAButton
+                  href={WA_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  label="Quero participar"
+                  className="text-white"
+                />
+              </MovingBorderWrapper>
             </div>
           </div>
         </motion.div>

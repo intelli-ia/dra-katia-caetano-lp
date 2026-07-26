@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Alegreya_Sans } from "next/font/google";
 import Script from "next/script";
@@ -62,7 +61,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <Header />
         <main>{children}</main>
         <Footer />
       </body>
