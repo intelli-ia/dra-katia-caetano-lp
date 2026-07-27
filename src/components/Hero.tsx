@@ -42,7 +42,7 @@ export default function HeroSection() {
       {/* Foto — ocupa toda a hero */}
       <div className="hidden md:block absolute inset-0 z-0">
         <Image
-          src="/142.webp"
+          src="/katia.webp"
           alt="Dra. Katia Caetano"
           fill
           priority
@@ -87,8 +87,8 @@ export default function HeroSection() {
       </div>
 
       {/* Conteúdo desktop */}
-      <div className="hidden md:block relative z-10 w-full container mx-auto px-6">
-        <div className="lg:ml-auto lg:w-[54%] xl:w-[48%] max-w-2xl">
+      <div className="hidden md:block relative z-10 w-full container mx-auto px-6 pt-24">
+        <div className="lg:ml-auto lg:w-[44%] xl:w-[40%] max-w-2xl">
 
           {/* H1 */}
           <motion.h1
@@ -98,7 +98,7 @@ export default function HeroSection() {
             className="font-heading font-medium text-white text-4xl md:text-5xl lg:text-6xl leading-[1.12] tracking-tight max-w-lg"
           >
             Supervisão clínica ao vivo e gratuita para{" "}
-            <span className="text-[#008538]">psicólogos.</span>
+            <span className="text-[#008538]">psicólogas.</span>
           </motion.h1>
 
           {/* Subtítulo */}
@@ -162,7 +162,7 @@ export default function HeroSection() {
             className="font-heading font-bold text-white text-[36px] leading-[1.2] tracking-tight max-w-[300px] mx-auto"
           >
             Supervisão clínica ao vivo e gratuita para{" "}
-            <span className="text-white">psicólogos.</span>
+            <span className="text-white">psicólogas.</span>
           </motion.h1>
 
           <motion.p
