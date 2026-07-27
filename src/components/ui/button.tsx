@@ -13,7 +13,7 @@ const buttonVariants = cva(
         ghost: "text-[#008538] hover:bg-[#008538]/10 active:translate-y-0.5",
       },
       size: {
-        default: "px-6 py-3 text-base md:px-8 md:py-3.5 md:text-base",
+        default: "px-8 py-3.5 text-base md:px-12 md:py-4 md:text-base",
         sm: "px-5 py-2.5 text-sm",
       },
     },

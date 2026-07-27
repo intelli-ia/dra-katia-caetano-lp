@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { RegistrationModal } from "@/components/ui/RegistrationModal";
 
 const items = [
   {
@@ -75,6 +76,17 @@ export default function AboutSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center mt-14 md:mt-20"
+        >
+          <RegistrationModal label="Quero participar" className="text-white" />
+        </motion.div>
 
       </div>
     </section>

@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
               </p>
               <div className="w-12 h-0.5 bg-[#008538] mb-7" />
               <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-10">
-                A cada 15 dias, apresento e discuto ao vivo casos clínicos reais com mais de 100 psicólogos no Google Meet.
+                A cada 15 dias, apresento e discuto ao vivo casos clínicos reais com mais de 100 psicólogas no Google Meet.
                 Cada sessão é uma oportunidade de entender como estruturar hipóteses, tomar decisões e conduzir
                 atendimentos com mais segurança — trocando experiência com colegas e aprendendo, na prática,
                 o raciocínio que transforma um psicólogo em especialista.

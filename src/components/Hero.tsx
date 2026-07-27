@@ -3,9 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Users, FileText } from "lucide-react";
-import { CTAButton } from "@/components/ui/CTAButton";
-import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
-import { WA_LINK } from "@/lib/constants";
+import { RegistrationModal } from "@/components/ui/RegistrationModal";
 
 const stats = [
   {
@@ -119,15 +117,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mt-8 lg:mt-9"
           >
-            <MovingBorderWrapper>
-              <CTAButton
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                label="Quero participar"
-                className="text-white"
-              />
-            </MovingBorderWrapper>
+            <RegistrationModal label="Quero participar" className="text-white" />
           </motion.div>
         </div>
       </div>
@@ -181,15 +171,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mt-5 flex justify-center"
           >
-            <MovingBorderWrapper>
-              <CTAButton
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                label="Quero participar"
-                className="text-white"
-              />
-            </MovingBorderWrapper>
+            <RegistrationModal label="Quero participar" className="text-white" />
           </motion.div>
           </div>
         </div>

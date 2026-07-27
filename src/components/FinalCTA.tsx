@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CTAButton } from "@/components/ui/CTAButton";
-import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
-import { WA_LINK, PROFESSIONAL_NAME } from "@/lib/constants";
+import { RegistrationModal } from "@/components/ui/RegistrationModal";
+import { PROFESSIONAL_NAME } from "@/lib/constants";
 
 export function FinalCTASection() {
   return (
@@ -46,15 +45,7 @@ export function FinalCTASection() {
             viewport={{ once: true }}
             className="relative z-10 flex justify-center mb-6"
           >
-            <MovingBorderWrapper>
-              <CTAButton
-                href={WA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                label="Quero participar"
-                className="text-white"
-              />
-            </MovingBorderWrapper>
+            <RegistrationModal label="Quero participar" className="text-white" />
           </motion.div>
 
         </div>
