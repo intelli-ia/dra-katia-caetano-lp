@@ -71,7 +71,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 shrink-0 rounded-xl bg-[#008538]/15 flex items-center justify-center">
                 {"imageSrc" in stat ? (
-                  <Image src={stat.imageSrc} alt={stat.title} width={28} height={28} />
+                  <Image src={stat.imageSrc as string} alt={stat.title} width={28} height={28} />
                 ) : (
                   <stat.icon className="w-6 h-6 text-[#008538]" />
                 )}
