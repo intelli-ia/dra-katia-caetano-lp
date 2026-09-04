@@ -50,14 +50,14 @@ const structureItems = [
 ];
 
 const activities = [
-  "apresentação e análise de casos",
-  "discussão técnica",
-  "construção e revisão de hipóteses clínicas",
-  "análise dos processos envolvidos",
-  "discussão de estratégias e intervenções",
-  "dúvidas relacionadas à prática clínica",
-  "orientação sobre a condução dos casos",
-  "desenvolvimento do raciocínio terapêutico",
+  "Apresentação e Análise de Casos",
+  "Discussão Técnica",
+  "Construção e Revisão de Hipóteses Clínicas",
+  "Análise dos Processos Envolvidos",
+  "Discussão de Estratégias e Intervenções",
+  "Dúvidas Relacionadas à Prática Clínica",
+  "Orientação sobre a Condução dos Casos",
+  "Desenvolvimento do Raciocínio Terapêutico",
 ];
 
 export default function JourneySection() {
