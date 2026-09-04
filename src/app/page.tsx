@@ -1,6 +1,7 @@
 import HeroSection from "@/components/Hero";
 import TestimonialsSection from "@/components/Testimonials";
 import AboutSection from "@/components/About";
+import VideoTestimonialsSection from "@/components/VideoTestimonials";
 import ForWhomSection from "@/components/Services";
 import JourneySection from "@/components/Journey";
 import PresentationSection from "@/components/Presentation";
@@ -13,6 +14,7 @@ export default function HomePage() {
       <HeroSection />
       <TestimonialsSection />
       <AboutSection />
+      <VideoTestimonialsSection />
       <ForWhomSection />
       <JourneySection />
       <PresentationSection />
