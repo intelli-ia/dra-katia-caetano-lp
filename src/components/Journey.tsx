@@ -78,9 +78,12 @@ export default function JourneySection() {
             <span className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4 block">
               Metodologia
             </span>
-            <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-[#13181E] leading-[1.18] tracking-tight">
+            <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-[#13181E] leading-[1.18] tracking-tight mb-5">
               Como funciona a supervisão?
             </h2>
+            <p className="text-[#13181E]/55 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+              Durante quatro meses, você estará inserido em um processo contínuo de acompanhamento clínico.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto mb-14 md:mb-20">
@@ -136,7 +139,7 @@ export default function JourneySection() {
               {/* Atividades */}
               <div className="lg:w-3/5 bg-[#F7F6F3] border border-[#13181E]/8 rounded-3xl p-8">
                 <p className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-5">
-                  Os encontros podem envolver
+                  Ao longo do semestre, os encontros poderão envolver:
                 </p>
                 <ul className="space-y-3 mb-8">
                   {activities.map((activity) => (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, ChevronDown, Check } from "lucide-react";
@@ -33,6 +33,17 @@ export function RegistrationModal({
   const [form, setForm] = useState({ name: "", email: "", phone: "", profile: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   function validate() {
     const errs: Record<string, string> = {};

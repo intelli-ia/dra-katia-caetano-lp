@@ -57,10 +57,13 @@ export default function AboutSection() {
           <span className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4 block">
             Incluído na supervisão
           </span>
-          <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-white leading-[1.18] tracking-tight">
+          <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-white leading-[1.18] tracking-tight mb-5">
             Tudo o que você{" "}
             <span className="text-[#008538]">recebe</span>
           </h2>
+          <p className="text-white/55 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+            Ao participar da supervisão, você terá acesso a:
+          </p>
         </motion.div>
 
         {/* Grid de itens */}

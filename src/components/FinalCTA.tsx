@@ -6,8 +6,8 @@ import { RegistrationModal } from "@/components/ui/RegistrationModal";
 
 const details = [
   { icon: Calendar, label: "Período", value: "Setembro a dezembro de 2026" },
-  { icon: Clock, label: "Encontros", value: "Semanais, às segundas, 16h–18h" },
-  { icon: Users, label: "Grupo", value: "Fechado, apenas 10 profissionais" },
+  { icon: Clock, label: "Encontros semanais ao vivo", value: "Segundas-feiras, das 16h às 18h" },
+  { icon: Users, label: "Grupo fechado", value: "Apenas 10 profissionais" },
 ];
 
 export function FinalCTASection() {
@@ -81,8 +81,17 @@ export function FinalCTASection() {
             </div>
 
             <div className="mt-8 pt-7 border-t border-white/10">
-              <p className="text-white/40 text-base leading-relaxed">
-                As vagas são limitadas para preservar a proposta de um grupo pequeno e possibilitar espaço para apresentação e discussão dos casos. <strong className="text-white/60">A aplicação não gera nenhum compromisso financeiro.</strong>
+              <p className="text-white/40 text-base leading-relaxed mb-6">
+                As vagas são limitadas para preservar a proposta de um grupo pequeno e possibilitar espaço para apresentação e discussão dos casos.
+              </p>
+              <h3 className="font-heading font-semibold text-white text-xl md:text-2xl leading-snug mb-3">
+                O primeiro passo é a aplicação.
+              </h3>
+              <p className="text-white/55 text-base leading-relaxed mb-2">
+                Preencha o formulário para apresentar seu momento profissional e entender se esta supervisão é adequada para você.
+              </p>
+              <p className="text-white/60 text-sm font-medium">
+                A aplicação não gera nenhum compromisso financeiro.
               </p>
             </div>
           </motion.div>
@@ -95,7 +104,7 @@ export function FinalCTASection() {
             viewport={{ once: true }}
             className="text-center text-[#13181E]/45 text-sm md:text-base leading-relaxed max-w-xl mx-auto"
           >
-            O objetivo não é apenas responder à dúvida de hoje. É ajudar você a{" "}
+            Aqui, o objetivo não é apenas responder à dúvida de hoje. É ajudar você a{" "}
             <strong className="text-[#13181E]/65">desenvolver um raciocínio clínico mais sólido para os casos de amanhã.</strong>
           </motion.p>
 

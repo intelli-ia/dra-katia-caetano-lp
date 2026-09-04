@@ -101,6 +101,7 @@ export default function PresentationSection() {
                 </div>
                 <h3 className="font-heading font-semibold text-red-400 text-base uppercase tracking-wide">Antes</h3>
               </div>
+              <p className="text-red-300/70 text-base mb-5">Você pode se perceber:</p>
               <div className="space-y-5">
                 {beforeItems.map((item) => (
                   <div key={item.title} className="flex flex-col gap-1">
@@ -126,6 +127,7 @@ export default function PresentationSection() {
                 </div>
                 <h3 className="font-heading font-semibold text-[#00e070] text-base uppercase tracking-wide">Depois</h3>
               </div>
+              <p className="text-white/60 text-base mb-5">A proposta é desenvolver:</p>
               <div className="space-y-5">
                 {afterItems.map((item) => (
                   <div key={item.title} className="flex flex-col gap-1">
@@ -156,7 +158,7 @@ export default function PresentationSection() {
               <div className="absolute -inset-6 bg-[#008538]/10 rounded-[2.5rem] blur-2xl -z-10" />
               <div className="relative h-[420px] md:h-[640px] rounded-[2rem] overflow-hidden border border-[#13181E]/10 shadow-[0_30px_60px_-20px_rgba(19,24,30,0.25)]">
                 <Image
-                  src="/presentation-1.webp"
+                  src="/about.webp"
                   alt="Dra. Katia Caetano"
                   fill
                   unoptimized
@@ -195,8 +197,11 @@ export default function PresentationSection() {
               <p className="text-[#13181E]/60 text-base md:text-lg leading-relaxed max-w-lg mb-5">
                 A Dra. Kátia Caetano é psicóloga e atua na formação e supervisão de profissionais da área clínica, com experiência em processos terapêuticos, análise clínica, conceitualização de casos e desenvolvimento de psicólogos.
               </p>
+              <p className="text-[#13181E]/50 text-base md:text-lg leading-relaxed max-w-lg mb-5">
+                Sua formação acadêmica inclui <strong className="text-[#13181E]/70">Pós-doutorado em Terapia Cognitivo-Comportamental nos Estados Unidos</strong>, <strong className="text-[#13181E]/70">Doutorado pela Universidade de São Paulo (USP)</strong> e <strong className="text-[#13181E]/70">Mestrado pela Universidade de São Paulo (USP)</strong>.
+              </p>
               <p className="text-[#13181E]/50 text-base md:text-lg leading-relaxed max-w-lg mb-7">
-                Sua formação acadêmica inclui <strong className="text-[#13181E]/70">Pós-doutorado em Terapia Cognitivo-Comportamental nos Estados Unidos</strong>, <strong className="text-[#13181E]/70">Doutorado pela Universidade de São Paulo (USP)</strong> e <strong className="text-[#13181E]/70">Mestrado pela Universidade de São Paulo (USP)</strong>. Ao longo de sua trajetória, desenvolveu experiência na análise e condução de processos terapêuticos, conceitualização de casos, supervisão clínica e formação de psicólogos.
+                Ao longo de sua trajetória, desenvolveu experiência na análise e condução de processos terapêuticos, conceitualização de casos, supervisão clínica e formação de psicólogos.
               </p>
               <p className="text-[#13181E]/50 text-base leading-relaxed max-w-lg mb-8 italic">
                 A supervisão reúne essa experiência em um formato de acompanhamento próximo, estruturado e contínuo.

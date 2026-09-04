@@ -38,8 +38,14 @@ export default function TestimonialsSection() {
             Uma supervisão para quem quer{" "}
             <span className="text-[#008538]">ir além da teoria.</span>
           </h2>
+          <p className="text-[#13181E]/65 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-4">
+            Esta não é uma formação convencional.
+          </p>
+          <p className="text-[#13181E]/65 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-4">
+            A proposta é criar um espaço contínuo de desenvolvimento clínico, no qual você possa apresentar seus casos, discutir suas decisões terapêuticas e receber orientação específica para aquilo que está acontecendo na sua prática.
+          </p>
           <p className="text-[#13181E]/65 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            Esta não é uma formação convencional. A proposta é criar um espaço contínuo de desenvolvimento clínico — no qual você possa apresentar seus casos, discutir suas decisões terapêuticas e receber orientação específica para aquilo que está acontecendo na sua prática.
+            Por isso, antes de entrar no grupo, existe uma <strong className="text-[#13181E]/80">aplicação</strong>.
           </p>
         </motion.div>
 
@@ -59,7 +65,7 @@ export default function TestimonialsSection() {
             A aplicação não é uma prova e não exige nenhum compromisso financeiro.
           </h3>
           <p className="text-white/65 text-lg leading-relaxed mb-8">
-            Ela existe para garantir que o grupo seja formado por profissionais alinhados à proposta da supervisão e para preservar a qualidade das discussões. O objetivo é formar um grupo pequeno, tecnicamente comprometido e que permita discussões realmente aprofundadas.
+            Ela existe para garantir que o grupo seja formado por profissionais alinhados à proposta da supervisão e para preservar a qualidade das discussões.
           </p>
 
           <p className="text-white/80 font-medium text-sm mb-4">A seleção considera aspectos como:</p>
@@ -73,6 +79,10 @@ export default function TestimonialsSection() {
               </li>
             ))}
           </ul>
+
+          <p className="text-white/65 text-base leading-relaxed mb-8">
+            O objetivo é formar um grupo pequeno, tecnicamente comprometido e que permita discussões realmente aprofundadas.
+          </p>
 
           <p className="text-white/50 text-base mb-6 italic">
             Preencha a aplicação sem compromisso financeiro.
