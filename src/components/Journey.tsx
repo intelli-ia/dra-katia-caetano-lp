@@ -14,27 +14,27 @@ const viewport = { once: true, amount: 0.2 } as const;
 
 const features = [
   {
-    title: "Encontros semanais ao vivo",
+    title: "Encontros Semanais ao Vivo",
     description: "Toda segunda-feira, das 16h às 18h, a partir de 14 de setembro de 2026.",
   },
   {
-    title: "Grupo reduzido",
+    title: "Grupo Reduzido",
     description: "A supervisão acontece em um grupo fechado de apenas 10 profissionais, permitindo maior profundidade nas discussões e espaço para apresentação dos casos.",
   },
   {
-    title: "Apresentação de casos",
+    title: "Apresentação de Casos",
     description: "Você poderá trazer situações reais da sua prática para serem analisadas e discutidas durante os encontros.",
   },
   {
-    title: "Discussões estruturadas",
+    title: "Discussões Estruturadas",
     description: "As discussões são conduzidas de forma organizada, considerando os diferentes elementos envolvidos em cada caso.",
   },
   {
-    title: "Orientação específica",
+    title: "Orientação Específica",
     description: "Você recebe direcionamentos relacionados às suas dificuldades e aos desafios apresentados nos casos.",
   },
   {
-    title: "Desenvolvimento do raciocínio terapêutico",
+    title: "Desenvolvimento do Raciocínio Terapêutico",
     description: "Mais do que encontrar respostas para um caso específico, o objetivo é desenvolver sua capacidade de analisar, formular e tomar decisões clínicas com maior precisão.",
   },
 ];
