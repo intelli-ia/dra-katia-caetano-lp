@@ -34,13 +34,13 @@ export default function ForWhomSection() {
             transition={{ duration: 0.8, ease }}
             className="md:w-2/5 md:sticky md:top-32"
           >
-            <span className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4 block">
+            <span className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4 block">
               Para quem é
             </span>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl lg:text-5xl text-white leading-[1.1] tracking-tight mb-6">
+            <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-white leading-[1.18] tracking-tight mb-6">
               Esta supervisão é para psicólogos que querem:
             </h2>
-            <p className="text-white/50 text-base md:text-lg leading-relaxed mb-8">
+            <p className="text-white/50 text-lg leading-relaxed mb-8">
               Se você sente que muitas vezes <strong className="text-white/75">sabe a teoria, mas ainda tem dúvidas sobre como organizar o caso e decidir o próximo passo</strong>, a supervisão foi pensada para esse momento da sua prática.
             </p>
             <RegistrationModal label="Quero me aplicar" className="text-white" />

@@ -75,10 +75,10 @@ export default function PresentationSection() {
             transition={{ duration: 0.8, ease }}
             className="text-center mb-14 md:mb-20 max-w-3xl mx-auto"
           >
-            <span className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4 block">
+            <span className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4 block">
               Transformação
             </span>
-            <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-[3.25rem] text-white leading-[1.1] tracking-tight">
+            <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-white leading-[1.18] tracking-tight">
               O que pode mudar na{" "}
               <span className="text-[#008538]">sua prática?</span>
             </h2>
@@ -99,13 +99,13 @@ export default function PresentationSection() {
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
                   <div className="w-3 h-3 rounded-full bg-white/40" />
                 </div>
-                <h3 className="font-heading font-semibold text-white/50 text-lg uppercase tracking-wide">Antes</h3>
+                <h3 className="font-heading font-semibold text-white/50 text-base uppercase tracking-wide">Antes</h3>
               </div>
               <div className="space-y-5">
                 {beforeItems.map((item) => (
                   <div key={item.title} className="flex flex-col gap-1">
-                    <p className="font-heading font-medium text-white/75 text-base leading-snug">{item.title}</p>
-                    <p className="text-white/40 text-sm leading-relaxed">{item.description}</p>
+                    <p className="font-heading font-medium text-white/75 text-lg leading-snug">{item.title}</p>
+                    <p className="text-white/40 text-base leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -124,13 +124,13 @@ export default function PresentationSection() {
                 <div className="w-8 h-8 rounded-full bg-[#008538]/20 flex items-center justify-center">
                   <div className="w-3 h-3 rounded-full bg-[#008538]" />
                 </div>
-                <h3 className="font-heading font-semibold text-[#00e070] text-lg uppercase tracking-wide">Depois</h3>
+                <h3 className="font-heading font-semibold text-[#00e070] text-base uppercase tracking-wide">Depois</h3>
               </div>
               <div className="space-y-5">
                 {afterItems.map((item) => (
                   <div key={item.title} className="flex flex-col gap-1">
-                    <p className="font-heading font-medium text-white text-base leading-snug">{item.title}</p>
-                    <p className="text-white/55 text-sm leading-relaxed">{item.description}</p>
+                    <p className="font-heading font-medium text-white text-lg leading-snug">{item.title}</p>
+                    <p className="text-white/55 text-base leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -186,19 +186,19 @@ export default function PresentationSection() {
 
             {/* Texto */}
             <div className="md:w-3/5">
-              <span className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-3 block">
+              <span className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-3 block">
                 Sobre a supervisora
               </span>
-              <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-[#13181E] leading-[1.1] tracking-tight mb-6">
+              <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-[#13181E] leading-[1.18] tracking-tight mb-6">
                 Dra. Kátia Caetano
               </h2>
               <p className="text-[#13181E]/60 text-base md:text-lg leading-relaxed max-w-lg mb-5">
                 A Dra. Kátia Caetano é psicóloga e atua na formação e supervisão de profissionais da área clínica, com experiência em processos terapêuticos, análise clínica, conceitualização de casos e desenvolvimento de psicólogos.
               </p>
-              <p className="text-[#13181E]/50 text-sm md:text-base leading-relaxed max-w-lg mb-7">
+              <p className="text-[#13181E]/50 text-base md:text-lg leading-relaxed max-w-lg mb-7">
                 Sua formação acadêmica inclui <strong className="text-[#13181E]/70">Pós-doutorado em Terapia Cognitivo-Comportamental nos Estados Unidos</strong>, <strong className="text-[#13181E]/70">Doutorado pela Universidade de São Paulo (USP)</strong> e <strong className="text-[#13181E]/70">Mestrado pela Universidade de São Paulo (USP)</strong>. Ao longo de sua trajetória, desenvolveu experiência na análise e condução de processos terapêuticos, conceitualização de casos, supervisão clínica e formação de psicólogos.
               </p>
-              <p className="text-[#13181E]/50 text-sm md:text-base leading-relaxed max-w-lg mb-8 italic">
+              <p className="text-[#13181E]/50 text-base leading-relaxed max-w-lg mb-8 italic">
                 A supervisão reúne essa experiência em um formato de acompanhamento próximo, estruturado e contínuo.
               </p>
               <RegistrationModal label="Quero me aplicar" className="text-white" />

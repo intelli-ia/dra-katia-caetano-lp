@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8, ease }}
           className="text-center mb-14 md:mb-20"
         >
-          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-[3.25rem] text-[#13181E] leading-[1.1] tracking-tight mb-6">
+          <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-[#13181E] leading-[1.18] tracking-tight mb-6">
             Uma supervisão para quem quer{" "}
             <span className="text-[#008538]">ir além da teoria.</span>
           </h2>
@@ -52,13 +52,13 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8, ease, delay: 0.1 }}
           className="bg-[#13181E] rounded-3xl p-8 md:p-12"
         >
-          <p className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4">
+          <p className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4">
             Por que existe uma aplicação?
           </p>
-          <h3 className="font-heading font-semibold text-white text-2xl md:text-3xl leading-snug tracking-tight mb-5">
+          <h3 className="font-heading font-semibold text-white text-[1.5rem] md:text-[2rem] leading-[1.18] tracking-tight mb-5">
             A aplicação não é uma prova e não exige nenhum compromisso financeiro.
           </h3>
-          <p className="text-white/65 text-base md:text-lg leading-relaxed mb-8">
+          <p className="text-white/65 text-lg leading-relaxed mb-8">
             Ela existe para garantir que o grupo seja formado por profissionais alinhados à proposta da supervisão e para preservar a qualidade das discussões. O objetivo é formar um grupo pequeno, tecnicamente comprometido e que permita discussões realmente aprofundadas.
           </p>
 
@@ -69,12 +69,12 @@ export default function TestimonialsSection() {
                 <span className="mt-1 w-5 h-5 rounded-full bg-[#008538]/20 flex items-center justify-center shrink-0">
                   <span className="w-2 h-2 rounded-full bg-[#008538]" />
                 </span>
-                <span className="text-white/70 text-base leading-relaxed">{item}</span>
+                <span className="text-white/70 text-lg leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
 
-          <p className="text-white/50 text-sm mb-6 italic">
+          <p className="text-white/50 text-base mb-6 italic">
             Preencha a aplicação sem compromisso financeiro.
           </p>
 

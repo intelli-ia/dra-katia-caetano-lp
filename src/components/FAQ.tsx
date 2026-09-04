@@ -45,7 +45,7 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-10 md:mb-16"
         >
-          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight">
+          <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-white leading-[1.18] tracking-tight">
             Ficou com alguma{" "}
             <span className="text-[#008538]">dúvida?</span>
           </h2>

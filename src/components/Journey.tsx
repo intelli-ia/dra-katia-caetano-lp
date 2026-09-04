@@ -75,10 +75,10 @@ export default function JourneySection() {
             transition={{ duration: 0.8, ease }}
             className="text-center mb-14 md:mb-20 max-w-3xl mx-auto"
           >
-            <span className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4 block">
+            <span className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4 block">
               Metodologia
             </span>
-            <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-[3.25rem] text-[#13181E] leading-[1.1] tracking-tight">
+            <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-[#13181E] leading-[1.18] tracking-tight">
               Como funciona a supervisão?
             </h2>
           </motion.div>
@@ -100,7 +100,7 @@ export default function JourneySection() {
                 <h3 className="font-heading font-semibold text-[#13181E] text-lg leading-snug">
                   {f.title}
                 </h3>
-                <p className="text-[#13181E]/60 text-sm md:text-base leading-relaxed">
+                <p className="text-[#13181E]/60 text-base md:text-lg leading-relaxed">
                   {f.description}
                 </p>
               </motion.div>
@@ -120,7 +120,7 @@ export default function JourneySection() {
 
               {/* Info da estrutura */}
               <div className="lg:w-2/5 bg-[#13181E] rounded-3xl p-8">
-                <p className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-5">
+                <p className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-5">
                   Estrutura do programa
                 </p>
                 <div className="space-y-4">
@@ -135,7 +135,7 @@ export default function JourneySection() {
 
               {/* Atividades */}
               <div className="lg:w-3/5 bg-[#F7F6F3] border border-[#13181E]/8 rounded-3xl p-8">
-                <p className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-5">
+                <p className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-5">
                   Os encontros podem envolver
                 </p>
                 <ul className="space-y-3 mb-8">
@@ -144,11 +144,11 @@ export default function JourneySection() {
                       <span className="mt-1 w-5 h-5 rounded-full bg-[#008538]/12 flex items-center justify-center shrink-0">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#008538]" />
                       </span>
-                      <span className="text-[#13181E]/70 text-sm md:text-base leading-relaxed">{activity}</span>
+                      <span className="text-[#13181E]/70 text-base md:text-lg leading-relaxed">{activity}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-[#13181E]/50 text-sm leading-relaxed italic">
+                <p className="text-[#13181E]/50 text-base leading-relaxed italic">
                   A proposta é que você não tenha apenas uma supervisão pontual, mas um espaço contínuo para desenvolver sua prática clínica ao longo de todo o semestre.
                 </p>
               </div>

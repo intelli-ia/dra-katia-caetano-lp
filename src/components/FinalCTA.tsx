@@ -29,10 +29,10 @@ export function FinalCTASection() {
             viewport={{ once: true }}
             className="relative z-10 text-center mb-10 mt-8 md:mt-0"
           >
-            <span className="text-[#008538]/80 font-heading font-medium text-xs uppercase tracking-widest mb-4 block">
+            <span className="text-[#008538]/80 font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4 block">
               Supervisão Clínica Semestral em TCC
             </span>
-            <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-[3.25rem] text-[#13181E] leading-[1.1] tracking-tight mb-5">
+            <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-[#13181E] leading-[1.18] tracking-tight mb-5">
               Um semestre para aprofundar{" "}
               <span className="text-[#008538]">sua prática clínica.</span>
             </h2>

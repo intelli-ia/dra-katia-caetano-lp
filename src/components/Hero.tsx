@@ -48,7 +48,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4"
+            className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4"
           >
             Setembro a Dezembro de 2026
           </motion.p>
@@ -58,7 +58,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-heading font-medium text-white text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] tracking-tight max-w-lg"
+            className="font-heading font-medium text-white text-[1.75rem] md:text-[2rem] lg:text-[2.75rem] leading-[1.2] tracking-tight max-w-lg"
           >
             Supervisão Clínica{" "}
             <span className="text-[#008538]">Semestral</span>{" "}
@@ -129,7 +129,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-3"
+              className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-3"
             >
               Setembro a Dezembro de 2026
             </motion.p>
@@ -138,7 +138,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="font-heading font-bold text-white text-[32px] leading-[1.15] tracking-tight max-w-[300px] mx-auto"
+              className="font-heading font-medium text-white text-[1.75rem] leading-[1.2] tracking-tight max-w-[300px] mx-auto"
             >
               Supervisão Clínica <span className="text-[#008538]">Semestral</span> em TCC
             </motion.h1>
@@ -147,7 +147,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-white/80 text-sm leading-relaxed mt-3 max-w-[290px] mx-auto"
+              className="text-white/80 text-base leading-relaxed mt-3 max-w-[290px] mx-auto"
             >
               Desenvolva segurança, clareza e precisão para conduzir seus casos clínicos.
             </motion.p>

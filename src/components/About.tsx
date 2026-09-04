@@ -54,10 +54,10 @@ export default function AboutSection() {
           transition={{ duration: 0.8, ease }}
           className="max-w-2xl mx-auto text-center mb-14 md:mb-20"
         >
-          <span className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4 block">
+          <span className="text-[#008538] font-heading font-medium text-[0.7rem] tracking-[0.14em] uppercase mb-4 block">
             Incluído na supervisão
           </span>
-          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-[3.25rem] text-white leading-[1.1] tracking-tight">
+          <h2 className="font-heading font-medium text-[1.875rem] md:text-[2.5rem] lg:text-[3rem] text-white leading-[1.18] tracking-tight">
             Tudo o que você{" "}
             <span className="text-[#008538]">recebe</span>
           </h2>
@@ -83,7 +83,7 @@ export default function AboutSection() {
                   {item.title}
                 </h3>
               </div>
-              <p className="text-white/60 text-sm md:text-base leading-relaxed pl-12">
+              <p className="text-white/60 text-base md:text-lg leading-relaxed pl-12">
                 {item.description}
               </p>
             </motion.div>
