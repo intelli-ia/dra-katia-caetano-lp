@@ -64,7 +64,7 @@ export default function AboutSection() {
         </motion.div>
 
         {/* Grid de itens */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
