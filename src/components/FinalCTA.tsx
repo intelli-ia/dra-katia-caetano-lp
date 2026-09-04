@@ -59,8 +59,8 @@ export function FinalCTASection() {
                       <d.icon className="w-4 h-4 text-[#008538]" />
                     </div>
                     <div>
-                      <p className="text-white/40 text-xs">{d.label}</p>
-                      <p className="text-white font-medium text-sm">{d.value}</p>
+                      <p className="text-white/40 text-sm">{d.label}</p>
+                      <p className="text-white font-medium text-base">{d.value}</p>
                     </div>
                   </div>
                 ))}
@@ -69,10 +69,10 @@ export function FinalCTASection() {
               {/* Preço + CTA */}
               <div className="flex flex-col items-start md:items-end gap-4 shrink-0">
                 <div>
-                  <p className="text-white/40 text-xs mb-1">Investimento atual</p>
-                  <p className="font-heading font-bold text-white text-4xl md:text-5xl leading-none">
+                  <p className="text-white/40 text-sm mb-1">Investimento atual</p>
+                  <p className="font-heading font-bold text-white text-5xl md:text-6xl leading-none">
                     R$&nbsp;490
-                    <span className="text-white/50 text-xl font-medium">/mês</span>
+                    <span className="text-white/50 text-2xl font-medium">/mês</span>
                   </p>
                 </div>
                 <RegistrationModal label="Quero me aplicar" className="text-white" />
@@ -81,7 +81,7 @@ export function FinalCTASection() {
             </div>
 
             <div className="mt-8 pt-7 border-t border-white/10">
-              <p className="text-white/40 text-sm leading-relaxed">
+              <p className="text-white/40 text-base leading-relaxed">
                 As vagas são limitadas para preservar a proposta de um grupo pequeno e possibilitar espaço para apresentação e discussão dos casos. <strong className="text-white/60">A aplicação não gera nenhum compromisso financeiro.</strong>
               </p>
             </div>
