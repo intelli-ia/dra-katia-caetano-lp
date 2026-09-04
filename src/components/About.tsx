@@ -64,7 +64,7 @@ export default function AboutSection() {
         </motion.div>
 
         {/* Grid de itens */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-5">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
@@ -73,7 +73,7 @@ export default function AboutSection() {
               whileInView="show"
               viewport={viewport}
               transition={{ duration: 0.6, ease, delay: i * 0.09 }}
-              className={`group bg-white/[0.04] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-4 transition-all duration-300 hover:border-[#008538]/40 hover:bg-white/[0.07] ${i === 4 ? "md:col-span-2 lg:col-span-1 md:mx-auto md:w-1/2 lg:w-full" : ""}`}
+              className="group bg-white/[0.04] border border-white/10 rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:border-[#008538]/40 hover:bg-white/[0.07]"
             >
               <div className="flex items-center gap-3">
                 <span className="w-9 h-9 rounded-full bg-[#008538]/15 flex items-center justify-center shrink-0">
