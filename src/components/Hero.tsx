@@ -6,9 +6,10 @@ import { Calendar, Clock, Users } from "lucide-react";
 import { RegistrationModal } from "@/components/ui/RegistrationModal";
 
 const badges = [
+  { icon: Calendar, label: "De setembro a dezembro de 2026" },
+  { icon: Clock, label: "Segundas-feiras, das 16h às 18h" },
   { icon: Calendar, label: "Início: 14 de setembro" },
-  { icon: Clock, label: "Seg, 16h às 18h" },
-  { icon: Users, label: "Apenas 10 vagas" },
+  { icon: Users, label: "Apenas 10 vagas por grupo" },
 ];
 
 export default function HeroSection() {
@@ -66,13 +67,33 @@ export default function HeroSection() {
           </motion.h1>
 
           {/* Subtítulo */}
-          <motion.p
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/70 text-lg md:text-xl leading-relaxed mt-4 lg:mt-5 max-w-lg"
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="text-white/85 text-lg md:text-xl leading-relaxed mt-4 lg:mt-5 max-w-lg font-medium"
           >
-            Desenvolva mais segurança, clareza e precisão para conduzir seus casos clínicos — com acompanhamento contínuo ao longo de um semestre.
+            Desenvolva mais segurança, clareza e precisão para conduzir seus casos clínicos.
+          </motion.h2>
+
+          {/* Descrição */}
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="text-white/55 text-base md:text-lg leading-relaxed mt-4 max-w-lg"
+          >
+            Uma supervisão clínica contínua para psicólogos que querem aprimorar o raciocínio clínico, organizar melhor seus casos e tomar decisões terapêuticas com mais segurança.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="text-white/55 text-base md:text-lg leading-relaxed mt-3 max-w-lg"
+          >
+            Durante um semestre, você terá{" "}
+            <strong className="text-white/75">encontros semanais ao vivo, análise de casos, discussões técnicas, feedback e orientação direta</strong>, em um grupo fechado de apenas 10 profissionais.
           </motion.p>
 
           {/* Badges */}
@@ -100,7 +121,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.55 }}
             className="mt-8 lg:mt-9"
           >
-            <RegistrationModal label="Quero me aplicar" className="text-white" />
+            <RegistrationModal label="Quero me aplicar para a supervisão" className="text-white" />
           </motion.div>
         </div>
       </div>
@@ -147,9 +168,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-white/80 text-base leading-relaxed mt-3 max-w-[290px] mx-auto"
+              className="text-white/80 text-base leading-relaxed mt-3 max-w-[310px] mx-auto"
             >
-              Desenvolva segurança, clareza e precisão para conduzir seus casos clínicos.
+              Desenvolva mais segurança, clareza e precisão para conduzir seus casos clínicos.
             </motion.p>
 
             <motion.div
@@ -175,7 +196,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-5 flex justify-center"
             >
-              <RegistrationModal label="Quero me aplicar" className="text-white" />
+              <RegistrationModal label="Quero me aplicar para a supervisão" className="text-white" />
             </motion.div>
           </div>
         </div>
