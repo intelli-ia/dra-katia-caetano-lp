@@ -93,19 +93,19 @@ export default function PresentationSection() {
               whileInView="show"
               viewport={viewport}
               transition={{ duration: 0.7, ease }}
-              className="bg-white/[0.04] border border-white/10 rounded-3xl p-7 md:p-10"
+              className="bg-red-950/40 border border-red-700/40 rounded-3xl p-7 md:p-10"
             >
               <div className="flex items-center gap-3 mb-7">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-white/40" />
+                <div className="w-8 h-8 rounded-full bg-red-700/30 flex items-center justify-center">
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
                 </div>
-                <h3 className="font-heading font-semibold text-white/50 text-base uppercase tracking-wide">Antes</h3>
+                <h3 className="font-heading font-semibold text-red-400 text-base uppercase tracking-wide">Antes</h3>
               </div>
               <div className="space-y-5">
                 {beforeItems.map((item) => (
                   <div key={item.title} className="flex flex-col gap-1">
-                    <p className="font-heading font-medium text-white/75 text-lg leading-snug">{item.title}</p>
-                    <p className="text-white/40 text-base leading-relaxed">{item.description}</p>
+                    <p className="font-heading font-medium text-red-200 text-lg leading-snug">{item.title}</p>
+                    <p className="text-red-300/60 text-base leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -118,11 +118,11 @@ export default function PresentationSection() {
               whileInView="show"
               viewport={viewport}
               transition={{ duration: 0.7, ease, delay: 0.1 }}
-              className="bg-[#008538]/10 border border-[#008538]/30 rounded-3xl p-7 md:p-10"
+              className="bg-[#008538]/20 border border-[#008538]/50 rounded-3xl p-7 md:p-10"
             >
               <div className="flex items-center gap-3 mb-7">
-                <div className="w-8 h-8 rounded-full bg-[#008538]/20 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-[#008538]" />
+                <div className="w-8 h-8 rounded-full bg-[#008538]/35 flex items-center justify-center">
+                  <div className="w-3 h-3 rounded-full bg-[#00c050]" />
                 </div>
                 <h3 className="font-heading font-semibold text-[#00e070] text-base uppercase tracking-wide">Depois</h3>
               </div>
@@ -130,7 +130,7 @@ export default function PresentationSection() {
                 {afterItems.map((item) => (
                   <div key={item.title} className="flex flex-col gap-1">
                     <p className="font-heading font-medium text-white text-lg leading-snug">{item.title}</p>
-                    <p className="text-white/55 text-base leading-relaxed">{item.description}</p>
+                    <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>
