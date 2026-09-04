@@ -1,9 +1,9 @@
 import HeroSection from "@/components/Hero";
 import TestimonialsSection from "@/components/Testimonials";
-import AboutSection from "@/components/About";
-import VideoTestimonialsSection from "@/components/VideoTestimonials";
 import ForWhomSection from "@/components/Services";
 import JourneySection from "@/components/Journey";
+import AboutSection from "@/components/About";
+import VideoTestimonialsSection from "@/components/VideoTestimonials";
 import PresentationSection from "@/components/Presentation";
 import FAQSection from "@/components/FAQ";
 import { FinalCTASection } from "@/components/FinalCTA";
@@ -13,10 +13,10 @@ export default function HomePage() {
     <>
       <HeroSection />
       <TestimonialsSection />
-      <AboutSection />
-      <VideoTestimonialsSection />
       <ForWhomSection />
       <JourneySection />
+      <AboutSection />
+      <VideoTestimonialsSection />
       <PresentationSection />
       <FAQSection />
       <FinalCTASection />

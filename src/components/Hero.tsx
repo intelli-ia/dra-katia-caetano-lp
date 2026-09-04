@@ -2,31 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Users, FileText } from "lucide-react";
+import { Calendar, Clock, Users } from "lucide-react";
 import { RegistrationModal } from "@/components/ui/RegistrationModal";
 
-const stats = [
-  {
-    imageSrc: "/meet-logo.png",
-    title: "Ao Vivo no Google Meet",
-    rotate: "-rotate-3",
-    top: "180px",
-    left: "0px",
-  },
-  {
-    icon: Users,
-    title: "+100 alunos online",
-    rotate: "rotate-2",
-    top: "180px",
-    left: "210px",
-  },
-  {
-    icon: FileText,
-    title: "Materiais exclusivos",
-    rotate: "-rotate-2",
-    top: "180px",
-    left: "420px",
-  },
+const badges = [
+  { icon: Calendar, label: "Início: 14 de setembro" },
+  { icon: Clock, label: "Seg, 16h às 18h" },
+  { icon: Users, label: "Apenas 10 vagas" },
 ];
 
 export default function HeroSection() {
@@ -57,46 +39,30 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Stats — imagem secundária no lado esquerdo */}
-      <div className="hidden lg:block absolute left-8 xl:left-12 bottom-0 z-10 w-[660px] h-[320px]">
-        {stats.map((stat, i) => (
-          <motion.div
-            key={stat.title}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 + i * 0.15 }}
-            style={{ top: stat.top, left: stat.left }}
-            className={`absolute w-44 xl:w-48 bg-[#161C24]/95 backdrop-blur-sm border border-white/10 rounded-2xl p-3.5 shadow-2xl shadow-black/40`}
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 shrink-0 rounded-xl bg-[#008538]/15 flex items-center justify-center">
-                {"imageSrc" in stat ? (
-                  <Image src={stat.imageSrc as string} alt={stat.title} width={28} height={28} />
-                ) : (
-                  <stat.icon className="w-6 h-6 text-[#008538]" />
-                )}
-              </div>
-              <p className="font-heading font-semibold text-white text-base leading-snug">
-                {stat.title}
-              </p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
       {/* Conteúdo desktop */}
-      <div className="hidden md:block relative z-10 w-full container mx-auto px-6 pt-24">
+      <div className="hidden md:block relative z-10 w-full container mx-auto px-6 pt-24 pb-16">
         <div className="lg:ml-auto lg:w-[44%] xl:w-[40%] max-w-2xl">
+
+          {/* Tag */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4"
+          >
+            Setembro a Dezembro de 2026
+          </motion.p>
 
           {/* H1 */}
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-heading font-medium text-white text-4xl md:text-5xl lg:text-6xl leading-[1.12] tracking-tight max-w-lg"
+            className="font-heading font-medium text-white text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] tracking-tight max-w-lg"
           >
-            Supervisão clínica ao vivo e gratuita para{" "}
-            <span className="text-[#008538]">psicólogas.</span>
+            Supervisão Clínica{" "}
+            <span className="text-[#008538]">Semestral</span>{" "}
+            em TCC
           </motion.h1>
 
           {/* Subtítulo */}
@@ -104,27 +70,43 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white/70 text-lg md:text-2xl leading-relaxed mt-4 lg:mt-5 max-w-lg"
+            className="text-white/70 text-lg md:text-xl leading-relaxed mt-4 lg:mt-5 max-w-lg"
           >
-            Receba o direcionamento de uma PhD em psicologia com <strong>mais de 20 anos de
-            experiência de consultório.</strong> No Google Meet, ao vivo e 100% gratuito.
+            Desenvolva mais segurança, clareza e precisão para conduzir seus casos clínicos — com acompanhamento contínuo ao longo de um semestre.
           </motion.p>
+
+          {/* Badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-6 flex flex-wrap gap-3"
+          >
+            {badges.map((b) => (
+              <div
+                key={b.label}
+                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl px-3.5 py-2"
+              >
+                <b.icon className="w-4 h-4 text-[#008538] shrink-0" />
+                <span className="text-white/90 text-sm font-medium">{b.label}</span>
+              </div>
+            ))}
+          </motion.div>
 
           {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
             className="mt-8 lg:mt-9"
           >
-            <RegistrationModal label="Quero participar" className="text-white" />
+            <RegistrationModal label="Quero me aplicar" className="text-white" />
           </motion.div>
         </div>
       </div>
 
       {/* ===== Mobile ===== */}
       <div className="md:hidden">
-        {/* Foto — proporção fixa; a altura desta caixa É a altura total da hero no mobile */}
         <div className="relative w-full aspect-[912/1850]">
           <Image
             src="/132.webp"
@@ -142,37 +124,59 @@ export default function HeroSection() {
             }}
           />
 
-          {/* Conteúdo — posicionado de forma absoluta sobre a foto.
-              Mover isso (via `bottom`) NÃO altera a altura da hero nem a posição da próxima seção. */}
-          <div className="absolute inset-x-0 bottom-24 z-10 px-5 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-heading font-bold text-white text-[36px] leading-[1.2] tracking-tight max-w-[300px] mx-auto"
-          >
-            Supervisão clínica ao vivo e gratuita para{" "}
-            <span className="text-white">psicólogas.</span>
-          </motion.h1>
+          <div className="absolute inset-x-0 bottom-16 z-10 px-5 text-center">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-3"
+            >
+              Setembro a Dezembro de 2026
+            </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-white text-base leading-relaxed mt-2.5 max-w-[300px] mx-auto"
-          >
-            Receba o direcionamento de uma PhD em psicologia com <strong>mais de 20 anos de
-            experiência de consultório.</strong> No Google Meet, ao vivo e 100% gratuito.
-          </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              className="font-heading font-bold text-white text-[32px] leading-[1.15] tracking-tight max-w-[300px] mx-auto"
+            >
+              Supervisão Clínica <span className="text-[#008538]">Semestral</span> em TCC
+            </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="mt-5 flex justify-center"
-          >
-            <RegistrationModal label="Quero participar" className="text-white" />
-          </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-white/80 text-sm leading-relaxed mt-3 max-w-[290px] mx-auto"
+            >
+              Desenvolva segurança, clareza e precisão para conduzir seus casos clínicos.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.38 }}
+              className="mt-4 flex flex-wrap justify-center gap-2"
+            >
+              {badges.map((b) => (
+                <div
+                  key={b.label}
+                  className="flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-lg px-2.5 py-1.5"
+                >
+                  <b.icon className="w-3.5 h-3.5 text-[#008538] shrink-0" />
+                  <span className="text-white/90 text-xs font-medium">{b.label}</span>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-5 flex justify-center"
+            >
+              <RegistrationModal label="Quero me aplicar" className="text-white" />
+            </motion.div>
           </div>
         </div>
       </div>

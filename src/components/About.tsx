@@ -1,76 +1,89 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { RegistrationModal } from "@/components/ui/RegistrationModal";
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0 },
+};
+
+const viewport = { once: true, amount: 0.15 } as const;
 
 const items = [
   {
-    title: "Supervisões Clínicas ao\u00a0Vivo",
-    image: "/card-supervisao.jpg",
-    description: "Encontros quinzenais ao vivo com análise e discussão de casos clínicos reais.",
+    number: "01",
+    title: "Supervisão clínica semanal ao vivo",
+    description: "Encontros semanais para apresentação de casos, discussão técnica, orientação e desenvolvimento do raciocínio clínico.",
   },
   {
-    title: "Acervo de Curadoria\u00a0Científica",
-    image: "/card-curadoria.jpg",
-    description: "Artigos, protocolos e materiais selecionados para aprofundar sua prática clínica.",
+    number: "02",
+    title: "Curso Formação e Tratamento da Ansiedade",
+    description: "Acesso ao curso completo, composto por 10 aulas, para aprofundar sua compreensão sobre ansiedade e seu tratamento.",
   },
   {
-    title: "Direcionamento Estratégico",
-    image: "/card-direcionamento.jpg",
-    description: "Orientações práticas de manejo clínico para os desafios do seu consultório.",
+    number: "03",
+    title: "Fichas e materiais clínicos exclusivos",
+    description: "Materiais desenvolvidos para apoiar sua prática e organização dos casos.",
   },
   {
-    title: "Comunidade de\u00a0Intervisão",
-    image: "/card-whatsapp.png",
-    imageBg: "bg-[#25D366]",
-    imageContain: true,
-    description: "Grupo exclusivo no WhatsApp para trocar experiências entre as supervisões.",
+    number: "04",
+    title: "Pasta exclusiva no Drive",
+    description: "Um espaço organizado com materiais complementares para consulta ao longo do programa.",
+  },
+  {
+    number: "05",
+    title: "Artigos científicos selecionados",
+    description: "Conteúdos científicos selecionados para complementar e aprofundar as discussões clínicas.",
   },
 ];
 
 export default function AboutSection() {
   return (
-    <section id="sobre" className="relative w-full py-20 md:py-32 section-bg">
-      <div className="w-full px-4 md:px-8">
+    <section id="o-que-voce-recebe" className="relative w-full py-20 md:py-32 section-bg">
+      <div className="container mx-auto px-6 md:px-16">
 
-        {/* Cabeçalho da seção */}
+        {/* Cabeçalho */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewport}
+          transition={{ duration: 0.8, ease }}
           className="max-w-2xl mx-auto text-center mb-14 md:mb-20"
         >
-          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight">
-            O que você acessa junto do seu{" "}
-            <span className="text-[#008538]">acompanhamento:</span>
+          <span className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4 block">
+            Incluído na supervisão
+          </span>
+          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-[3.25rem] text-white leading-[1.1] tracking-tight">
+            Tudo o que você{" "}
+            <span className="text-[#008538]">recebe</span>
           </h2>
         </motion.div>
 
-        {/* Grade de cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        {/* Grid de itens */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-white/[0.03] border border-white/10 rounded-2xl p-5 min-h-[380px] flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:bg-white/[0.05] hover:border-[#008538]/50 hover:shadow-[0_24px_48px_-16px_rgba(0,133,56,0.4)]"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={viewport}
+              transition={{ duration: 0.6, ease, delay: i * 0.09 }}
+              className={`group bg-white/[0.04] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col gap-4 transition-all duration-300 hover:border-[#008538]/40 hover:bg-white/[0.07] ${i === 4 ? "md:col-span-2 lg:col-span-1 md:mx-auto md:w-1/2 lg:w-full" : ""}`}
             >
-              <h3 className="font-heading font-semibold text-white text-2xl md:text-3xl leading-snug mb-4 transition-colors duration-300 group-hover:text-[#00e070]">
-                {item.title}
-              </h3>
-              <div className={`relative w-full aspect-[4/3] mb-4 rounded-xl overflow-hidden ${"imageBg" in item ? item.imageBg : ""}`}>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className={"imageContain" in item ? "object-contain p-10" : "object-cover"}
-                />
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-full bg-[#008538]/15 flex items-center justify-center shrink-0">
+                  <span className="font-heading font-bold text-[#008538] text-xs">{item.number}</span>
+                </span>
+                <h3 className="font-heading font-semibold text-white text-lg md:text-xl leading-snug group-hover:text-[#00e070] transition-colors duration-300">
+                  {item.title}
+                </h3>
               </div>
-              <p className="text-white text-lg md:text-xl leading-relaxed">
+              <p className="text-white/60 text-sm md:text-base leading-relaxed pl-12">
                 {item.description}
               </p>
             </motion.div>
@@ -79,13 +92,14 @@ export default function AboutSection() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewport}
+          transition={{ duration: 0.6, ease, delay: 0.2 }}
           className="flex justify-center mt-14 md:mt-20"
         >
-          <RegistrationModal label="Quero participar" className="text-white" />
+          <RegistrationModal label="Quero me aplicar" className="text-white" />
         </motion.div>
 
       </div>

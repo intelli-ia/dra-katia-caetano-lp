@@ -1,74 +1,87 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { CTAButton } from "@/components/ui/CTAButton";
-import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
-import { WA_LINK } from "@/lib/constants";
+import { RegistrationModal } from "@/components/ui/RegistrationModal";
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0 },
+};
+
+const viewport = { once: true, amount: 0.2 } as const;
+
+const selectionCriteria = [
+  "nível de experiência e momento profissional",
+  "demandas clínicas atuais",
+  "interesse em desenvolver raciocínio clínico",
+  "alinhamento com a proposta da supervisão",
+  "possibilidade de participação e apresentação de casos",
+];
 
 export default function TestimonialsSection() {
   return (
-    <section id="depoimentos" className="relative w-full py-20 md:py-36 section-bg-light overflow-hidden">
+    <section id="sobre-a-supervisao" className="relative w-full py-20 md:py-32 section-bg-light overflow-hidden">
+      <div className="container mx-auto px-6 md:px-16 max-w-4xl">
 
-      <div className="w-full px-4 md:px-8">
-        <div className="bg-[#13181E] rounded-3xl overflow-hidden">
-          <div className="flex flex-col md:flex-row items-stretch gap-0">
+        {/* Intro */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewport}
+          transition={{ duration: 0.8, ease }}
+          className="text-center mb-14 md:mb-20"
+        >
+          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-[3.25rem] text-[#13181E] leading-[1.1] tracking-tight mb-6">
+            Uma supervisão para quem quer{" "}
+            <span className="text-[#008538]">ir além da teoria.</span>
+          </h2>
+          <p className="text-[#13181E]/65 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+            Esta não é uma formação convencional. A proposta é criar um espaço contínuo de desenvolvimento clínico — no qual você possa apresentar seus casos, discutir suas decisões terapêuticas e receber orientação específica para aquilo que está acontecendo na sua prática.
+          </p>
+        </motion.div>
 
-            {/* Image — left */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-full md:w-2/5 flex-shrink-0 p-5 md:p-8"
-            >
-              <Image
-                src="/psikatiacaetano_DXy6ogYFkaA_5.jpg"
-                alt="Dra. Kátia Caetano"
-                width={560}
-                height={700}
-                className="w-full h-full object-cover rounded-2xl"
-                style={{ minHeight: "400px" }}
-              />
-            </motion.div>
+        {/* Por que existe uma aplicação */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewport}
+          transition={{ duration: 0.8, ease, delay: 0.1 }}
+          className="bg-[#13181E] rounded-3xl p-8 md:p-12"
+        >
+          <p className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4">
+            Por que existe uma aplicação?
+          </p>
+          <h3 className="font-heading font-semibold text-white text-2xl md:text-3xl leading-snug tracking-tight mb-5">
+            A aplicação não é uma prova e não exige nenhum compromisso financeiro.
+          </h3>
+          <p className="text-white/65 text-base md:text-lg leading-relaxed mb-8">
+            Ela existe para garantir que o grupo seja formado por profissionais alinhados à proposta da supervisão e para preservar a qualidade das discussões. O objetivo é formar um grupo pequeno, tecnicamente comprometido e que permita discussões realmente aprofundadas.
+          </p>
 
-            {/* Content — right */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex-1 px-8 py-10 md:px-12 md:py-14 flex flex-col justify-center"
-            >
-              <h2 className="font-heading font-semibold text-white text-3xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-5">
-                Por que minhas supervisões reúnem{" "}
-                mais de 100 psicólogas ao&nbsp;vivo?
-              </h2>
-              <p className="font-heading font-medium text-white/60 text-lg md:text-2xl leading-snug mb-7">
-                Porque raciocínio clínico não se aprende lendo. Se aprende vendo casos reais sendo resolvidos.
-              </p>
-              <div className="w-12 h-0.5 bg-[#008538] mb-7" />
-              <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-10">
-                A cada 15 dias, apresento e discuto ao vivo casos clínicos reais com mais de 100 psicólogas no Google Meet.
-                Cada sessão é uma oportunidade de entender como estruturar hipóteses, tomar decisões e conduzir
-                atendimentos com mais segurança — trocando experiência com colegas e aprendendo, na prática,
-                o raciocínio que transforma um psicólogo em especialista.
-              </p>
-              <MovingBorderWrapper>
-                <CTAButton
-                  href={WA_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  label="Quero participar"
-                  className="text-white"
-                />
-              </MovingBorderWrapper>
-            </motion.div>
+          <p className="text-white/80 font-medium text-sm mb-4">A seleção considera aspectos como:</p>
+          <ul className="space-y-3 mb-10">
+            {selectionCriteria.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="mt-1 w-5 h-5 rounded-full bg-[#008538]/20 flex items-center justify-center shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-[#008538]" />
+                </span>
+                <span className="text-white/70 text-base leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
 
-          </div>
-        </div>
+          <p className="text-white/50 text-sm mb-6 italic">
+            Preencha a aplicação sem compromisso financeiro.
+          </p>
+
+          <RegistrationModal label="Quero preencher a aplicação" className="text-white" />
+        </motion.div>
+
       </div>
-
     </section>
   );
 }

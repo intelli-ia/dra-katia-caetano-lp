@@ -1,153 +1,71 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { CTAButton } from "@/components/ui/CTAButton";
-import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
-import { WA_LINK } from "@/lib/constants";
+import { motion } from "framer-motion";
+import { RegistrationModal } from "@/components/ui/RegistrationModal";
 
-const steps = [
-  {
-    number: "01",
-    title: "Clique no link de inscrição",
-    description: "Toque no botão abaixo para acessar a página de cadastro.",
-  },
-  {
-    number: "02",
-    title: "Preencha seus dados",
-    description: "Informe seu nome e e-mail oficial para confirmar seu registro.",
-  },
-  {
-    number: "03",
-    title: "Entre no grupo exclusivo",
-    description:
-      "Após o cadastro, você será redirecionado para o nosso grupo de avisos (é por lá que enviaremos o link de acesso exclusivo da aula).",
-  },
-  {
-    number: "04",
-    title: "Acompanhe as instruções",
-    description:
-      "Fique atento às mensagens no grupo para receber o material de apoio e o link do encontro ao vivo.",
-  },
-  {
-    number: "05",
-    title: "Esteja presente",
-    description:
-      "Conecte-se no dia e horário marcados e venha preparado para colocar a sua prática clínica em um novo patamar.",
-  },
+const ease = [0.16, 1, 0.3, 1] as const;
+
+const benefits = [
+  "desenvolver mais clareza e segurança no raciocínio clínico",
+  "organizar melhor as informações de cada caso",
+  "compreender com maior precisão os processos envolvidos",
+  "construir hipóteses clínicas mais consistentes",
+  "relacionar a formulação do caso às estratégias terapêuticas",
+  "conduzir intervenções com maior segurança",
+  "discutir casos reais e receber orientação específica",
+  "evoluir tecnicamente com acompanhamento contínuo",
 ];
 
 export default function ForWhomSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start center", "end center"],
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 20,
-    restDelta: 0.001,
-  });
-
-  const lineHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
-
   return (
     <section
       id="para-quem"
-      ref={sectionRef}
-      className="relative w-full py-20 md:py-36 section-bg-light overflow-hidden"
+      className="relative w-full py-20 md:py-32 section-bg overflow-hidden"
     >
-      <div className="relative z-10 container mx-auto px-6 md:px-16">
+      <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-5xl">
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16 md:mb-24"
-        >
-          <h2 className="font-heading font-semibold text-3xl md:text-5xl lg:text-6xl text-[#13181E] leading-[1.1] tracking-tight max-w-2xl mx-auto">
-            Como garantir o seu acesso ao{" "}
-            <span className="text-[#008538]">próximo encontro</span>
-          </h2>
-        </motion.div>
+        <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
 
-        {/* Steps */}
-        <div className="relative max-w-5xl mx-auto">
-
-          {/* Linha de fundo (estática) */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#13181E]/15 -translate-x-1/2 hidden md:block" />
-
-          {/* Linha de progresso (animada) */}
+          {/* Left — heading */}
           <motion.div
-            className="absolute left-1/2 top-0 w-px bg-[#008538] -translate-x-1/2 hidden md:block origin-top"
-            style={{ height: lineHeight }}
-          />
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease }}
+            className="md:w-2/5 md:sticky md:top-32"
+          >
+            <span className="text-[#008538] font-heading font-medium text-xs uppercase tracking-widest mb-4 block">
+              Para quem é
+            </span>
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl lg:text-5xl text-white leading-[1.1] tracking-tight mb-6">
+              Esta supervisão é para psicólogos que querem:
+            </h2>
+            <p className="text-white/50 text-base md:text-lg leading-relaxed mb-8">
+              Se você sente que muitas vezes <strong className="text-white/75">sabe a teoria, mas ainda tem dúvidas sobre como organizar o caso e decidir o próximo passo</strong>, a supervisão foi pensada para esse momento da sua prática.
+            </p>
+            <RegistrationModal label="Quero me aplicar" className="text-white" />
+          </motion.div>
 
-          <div className="flex flex-col gap-16 md:gap-0">
-            {steps.map((step, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <div
-                  key={step.number}
-                  className={`relative flex items-center md:mb-20 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
-                >
-                  {/* Conteúdo */}
-                  <motion.div
-                    initial={{ opacity: 0, x: isLeft ? -32 : 32 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, ease: "easeOut", delay: i * 0.1 }}
-                    className={`w-full md:w-[calc(50%-3rem)] ${isLeft ? "md:text-right md:pr-12" : "md:text-left md:pl-12"}`}
-                  >
-                    <p className="text-[#008538] font-heading font-medium text-xs md:text-sm uppercase tracking-widest mb-3">
-                      Passo {step.number}
-                    </p>
-                    <h3 className="font-heading font-medium text-lg md:text-2xl text-[#13181E] leading-snug mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-[#13181E]/55 text-sm md:text-lg leading-relaxed">
-                      {step.description}
-                    </p>
-                  </motion.div>
-
-                  {/* Círculo fixo na linha central */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-[#008538] items-center justify-center shrink-0 z-10 shadow-[0_0_20px_rgba(0,133,56,0.4)]">
-                    <span className="font-heading font-semibold text-white text-sm">
-                      {step.number}
-                    </span>
-                  </div>
-
-                  {/* Espaço oposto */}
-                  <div className="hidden md:block w-[calc(50%-3rem)]" />
-                </div>
-              );
-            })}
+          {/* Right — list */}
+          <div className="md:w-3/5 flex flex-col gap-4">
+            {benefits.map((item, i) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease, delay: i * 0.07 }}
+                className="flex items-start gap-4 bg-white/[0.04] border border-white/10 rounded-2xl px-5 py-4 hover:border-[#008538]/40 hover:bg-white/[0.07] transition-all duration-300"
+              >
+                <span className="mt-0.5 w-6 h-6 rounded-full bg-[#008538]/15 flex items-center justify-center shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-[#008538]" />
+                </span>
+                <span className="text-white/80 text-base md:text-lg leading-relaxed">{item}</span>
+              </motion.div>
+            ))}
           </div>
 
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mt-16 md:mt-20"
-        >
-          <MovingBorderWrapper>
-            <CTAButton
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              label="Quero participar"
-              className="text-white"
-            />
-          </MovingBorderWrapper>
-        </motion.div>
 
       </div>
     </section>

@@ -2,26 +2,32 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { CTAButton } from "@/components/ui/CTAButton";
-import { MovingBorderWrapper } from "@/components/ui/MovingBorderButton";
-import { WA_LINK } from "@/lib/constants";
+import { RegistrationModal } from "@/components/ui/RegistrationModal";
 
 const faqs = [
   {
-    q: "Como posso participar?",
-    a: "Para participar, basta entrar no nosso grupo oficial. Clique em qualquer um dos botões espalhados ao longo desta página para ser direcionado automaticamente.",
+    q: "Como funciona a aplicação?",
+    a: "A aplicação é um formulário simples para você apresentar seu momento profissional e suas demandas clínicas atuais. Não é uma prova e não exige nenhum compromisso financeiro. Após preencher, avaliaremos o alinhamento com a proposta e entraremos em contato.",
   },
   {
     q: "Quando acontecem os encontros?",
-    a: "Os encontros acontecem quinzenalmente, sempre às terças-feiras, no período da noite.",
+    a: "Os encontros acontecem semanalmente, toda segunda-feira, das 16h às 18h, com início em 14 de setembro de 2026.",
   },
   {
-    q: "Onde acontecem as reuniões?",
-    a: "O link de acesso é informado diretamente dentro do grupo. Os encontros são online, realizados via Google Meet ou Zoom.",
+    q: "Como são realizados os encontros?",
+    a: "Os encontros são realizados ao vivo, em formato online. O link de acesso é informado para os participantes do grupo.",
   },
   {
-    q: "Qual é o valor para participar?",
-    a: "A participação é totalmente gratuita.",
+    q: "Qual é o investimento?",
+    a: "O investimento é de R$ 490 por mês, pelo período de setembro a dezembro de 2026 (quatro meses). O processo começa pela aplicação, sem nenhum compromisso financeiro.",
+  },
+  {
+    q: "Quantas vagas estão disponíveis?",
+    a: "O grupo é fechado e conta com apenas 10 profissionais, para garantir profundidade nas discussões e espaço para apresentação e análise dos casos de cada participante.",
+  },
+  {
+    q: "Posso apresentar meus casos nas sessões?",
+    a: "Sim. A apresentação de casos é parte central da supervisão. Você poderá trazer situações reais da sua prática para serem analisadas e discutidas durante os encontros.",
   },
 ];
 
@@ -116,15 +122,7 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <MovingBorderWrapper>
-            <CTAButton
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              label="Quero participar"
-              className="text-white"
-            />
-          </MovingBorderWrapper>
+          <RegistrationModal label="Quero me aplicar" className="text-white" />
         </motion.div>
 
       </div>
