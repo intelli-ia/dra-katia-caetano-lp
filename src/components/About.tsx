@@ -75,15 +75,10 @@ export default function AboutSection() {
               transition={{ duration: 0.6, ease, delay: i * 0.09 }}
               className="group bg-white/[0.04] border border-white/10 rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:border-[#008538]/40 hover:bg-white/[0.07]"
             >
-              <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-full bg-[#008538]/15 flex items-center justify-center shrink-0">
-                  <span className="font-heading font-bold text-[#008538] text-xs">{item.number}</span>
-                </span>
-                <h3 className="font-heading font-semibold text-white text-lg md:text-xl leading-snug group-hover:text-[#00e070] transition-colors duration-300">
-                  {item.title}
-                </h3>
-              </div>
-              <p className="text-white/60 text-base md:text-lg leading-relaxed pl-12">
+              <h3 className="font-heading font-semibold text-white text-lg md:text-xl leading-snug group-hover:text-[#00e070] transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p className="text-white/60 text-base md:text-lg leading-relaxed">
                 {item.description}
               </p>
             </motion.div>
